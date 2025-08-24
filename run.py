@@ -103,6 +103,13 @@ def user_select_tile(grid_width, grid):
     clear_board()
     show_grid(grid)
 
+    # If user hits a mine, the board is revealed and the user is shown a
+    # game over message
+    if grid[row][col]["mine"]:
+        
+        print("You Hit A Mine! You Lose!")
+        return False
+
 
 def game_start():
     grid_width, num_of_mines = grid_user_input()
