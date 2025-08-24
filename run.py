@@ -44,7 +44,8 @@ def show_grid(grid):
     for y, row in enumerate(grid):
         print(f"{y+1:4} ", end="")
         for cell in row:
-            # this for loop determines if there should be a * or ■ if its a mine or safe
+            # this for loop determines if there should be a * or ■ if its 
+            # a mine or safe
             if cell["mine"] is True:
                 print(f"{'*':{cell_width}}", end="")
             else:
@@ -52,11 +53,23 @@ def show_grid(grid):
         print()
 
 
-# def place_random_mines(grid, num_of_mines):
+def place_random_mines(grid, num_of_mines):
+    grid_width = len(grid)
+    every_cell = []
+
+    # The first for loop created a list of all the tiles in the grid
+    for i in range(grid_width):
+        for x in range(grid_width):
+            every_cell.append((i, x))
+    # this uses the random import to select a random tile from the for loop
+    mine_positions = random.sample(every_cell, num_of_mines)
+    # This final for loop changes the earlier dictionary key into true,
+    # thus placing a mine
+    for i, x in mine_positions:
+        grid[i][x]["mine"] = True
 
 
 grid_width, num_of_mines = grid_user_input()
 grid = create_grid(grid_width)
-
+place_random_mines(grid, num_of_mines)
 show_grid(grid)
-# place_random_mines()
