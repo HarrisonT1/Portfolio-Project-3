@@ -72,7 +72,14 @@ def place_random_mines(grid, num_of_mines):
         grid[i][x]["mine"] = True
 
 
+def user_select_tile(grid_width):
+    selected_tile = input("Enter a tile using the format eg 'B3': ")
+
+    col = selected_tile[0]  
+    row = selected_tile[1]
+
 grid_width, num_of_mines = grid_user_input()
 grid = create_grid(grid_width)
 place_random_mines(grid, num_of_mines)
 show_grid(grid)
+user_select_tile(grid_width)
