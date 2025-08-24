@@ -91,8 +91,12 @@ def user_select_tile(grid_width):
         return "invalid Y coordinate"
 
 
-grid_width, num_of_mines = grid_user_input()
-grid = create_grid(grid_width)
-place_random_mines(grid, num_of_mines)
-show_grid(grid)
-user_select_tile(grid_width)
+def game_start():
+    grid_width, num_of_mines = grid_user_input()
+    grid = create_grid(grid_width)
+    place_random_mines(grid, num_of_mines)
+    show_grid(grid)
+    user_select_tile(grid_width)
+
+
+game_start()
