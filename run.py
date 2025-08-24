@@ -46,8 +46,11 @@ def show_grid(grid):
         for cell in row:
             # this for loop determines if there should be a * or ■ if its 
             # a mine or safe
-            if cell["mine"] is True:
-                print(f"{'*':{cell_width}}", end="")
+            if cell["revealed"] is True:
+                if cell["mine"] is True:
+                    print(f"{'*':{cell_width}}", end="")
+                else:
+                    print(f"{' ':{cell_width}}", end="")
             else:
                 print(f"{'■':{cell_width}}", end="")
         print()
