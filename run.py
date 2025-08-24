@@ -1,4 +1,10 @@
 import random
+import os
+
+
+# imported from stackoverflow.com - see readme
+def clear_board():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def grid_user_input():
@@ -6,7 +12,7 @@ def grid_user_input():
     grid_width = int(input("How wide would you like your grid to be: "))
     print("Please enter an whole number between 10 and 50")
     num_of_mines = int(input("How many mines would you like to place in the grid: "))
-
+    clear_board()
     return grid_width, num_of_mines
 
 
@@ -76,12 +82,10 @@ def place_random_mines(grid, num_of_mines):
 def user_select_tile(grid_width, grid):
     selected_tile = input("Enter a tile using the format eg 'B3': ")
 
-    col_let = selected_tile[0]
+    col_let = selected_tile[0].upper()
     row_num = selected_tile[1:]
 
-    # last_valid_column = chr(ord('A') + grid_width - 1)
-
-    col = ord(col_let) - ord('a')
+    col = ord(col_let) - ord('A')
     row = int(row_num) - 1
 
     # Stops a user being able to select a x coordinate outside of the
@@ -96,6 +100,8 @@ def user_select_tile(grid_width, grid):
         print("invalid Y coordinate")
 
     grid[row][col]["revealed"] = True
+    clear_board()
+    show_grid(grid)
 
 
 def game_start():
@@ -103,9 +109,9 @@ def game_start():
     grid = create_grid(grid_width)
     place_random_mines(grid, num_of_mines)
     active_game = True
-    
+    show_grid(grid)
+
     while active_game is True:
-        show_grid(grid)
         user_select_tile(grid_width, grid)
 
 
