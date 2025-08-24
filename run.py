@@ -9,38 +9,54 @@ def grid_user_input():
     return grid_width, num_of_mines
 
 
-def create_grid():
+def create_grid(grid_width):
+    """
+    This makes each cell a dictionary rather than a string
+    """
+    grid = []
+    for x in range(grid_width):
+        row = []
+        for y in range(grid_width):
+            cell = {"mine": False, "revealed": False}
+            row.append(cell)
+        grid.append(row)
+    return grid
+
+
+def show_grid(grid):
     """
     This function will create a grid based on what the user inputs
     """
-    grid_width, num_of_mines = grid_user_input()
 
-    grid = []
+    grid_size = len(grid)
     cell_width = 4
 
-    for i in range(grid_width):
-        grid.append([f"{'■':{cell_width}}"] * grid_width)
     #   this print statement and for loop creates the numbered axis x and y to
     #   make it easier to select specific tiles.
-    # X axis
+    #   X axis
     print("     ", end="")
-    for x in range(grid_width):
+    for x in range(grid_size):
         letter = chr(ord('A') + x)
         print(f"{letter:{cell_width}}", end="")
     print()
+
     # Y axis
     for y, row in enumerate(grid):
         print(f"{y+1:4} ", end="")
         for cell in row:
-            print(f"{cell:3}", end="")
+            # this for loop determines if there should be a * or ■ if its a mine or safe
+            if cell["mine"] is True:
+                print(f"{'*':{cell_width}}", end="")
+            else:
+                print(f"{'■':{cell_width}}", end="")
         print()
-    return grid
-
-# def place_random_mines():
-#     total_mines = range(10, 50)
-#     while total_mines:
 
 
+# def place_random_mines(grid, num_of_mines):
 
-create_grid()
+
+grid_width, num_of_mines = grid_user_input()
+grid = create_grid(grid_width)
+
+show_grid(grid)
 # place_random_mines()
