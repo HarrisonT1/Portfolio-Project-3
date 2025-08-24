@@ -1,5 +1,6 @@
 import random
 
+
 def grid_user_input():
     print("Please enter an whole number")
     grid_width = int(input("How wide would you like your grid to be: "))
@@ -44,8 +45,8 @@ def show_grid(grid):
     for y, row in enumerate(grid):
         print(f"{y+1:4} ", end="")
         for cell in row:
-            # this for loop determines if there should be a * or ■ if its 
-            # a mine or safe
+            # this for loop determines if there should be a * or ■ if
+            #  its a mine or safe
             if cell["revealed"] is True:
                 if cell["mine"] is True:
                     print(f"{'*':{cell_width}}", end="")
@@ -72,31 +73,40 @@ def place_random_mines(grid, num_of_mines):
         grid[i][x]["mine"] = True
 
 
-def user_select_tile(grid_width):
+def user_select_tile(grid_width, grid):
     selected_tile = input("Enter a tile using the format eg 'B3': ")
 
-    col = selected_tile[0]  
-    row = selected_tile[1]
+    col_let = selected_tile[0]
+    row_num = selected_tile[1:]
 
-    last_valid_column = chr(ord('A') + grid_width - 1)
+    # last_valid_column = chr(ord('A') + grid_width - 1)
+
+    col = ord(col_let) - ord('a')
+    row = int(row_num) - 1
 
     # Stops a user being able to select a x coordinate outside of the
     # grid size.
-    if col < 'A' or last_valid_column:
-        return "invalid X coordinate"
-    
+    if not (0 <= col < grid_width):
+        print("invalid X coordinate")
+        return True
+
     # Stops a user being able to select a y coordinate outside of the
     # grid size.
-    if row < 1 or row > grid_width:
-        return "invalid Y coordinate"
+    if not (0 <= row < grid_width):
+        print("invalid Y coordinate")
+
+    grid[row][col]["revealed"] = True
 
 
 def game_start():
     grid_width, num_of_mines = grid_user_input()
     grid = create_grid(grid_width)
     place_random_mines(grid, num_of_mines)
-    show_grid(grid)
-    user_select_tile(grid_width)
+    active_game = True
+    
+    while active_game is True:
+        show_grid(grid)
+        user_select_tile(grid_width, grid)
 
 
 game_start()
