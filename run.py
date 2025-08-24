@@ -78,6 +78,19 @@ def user_select_tile(grid_width):
     col = selected_tile[0]  
     row = selected_tile[1]
 
+    last_valid_column = chr(ord('A') + grid_width - 1)
+
+    # Stops a user being able to select a x coordinate outside of the
+    # grid size.
+    if col < 'A' or last_valid_column:
+        return "invalid X coordinate"
+    
+    # Stops a user being able to select a y coordinate outside of the
+    # grid size.
+    if row < 1 or row > grid_width:
+        return "invalid Y coordinate"
+
+
 grid_width, num_of_mines = grid_user_input()
 grid = create_grid(grid_width)
 place_random_mines(grid, num_of_mines)
