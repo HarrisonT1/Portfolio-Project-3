@@ -107,12 +107,15 @@ def user_select_tile(grid_width, grid):
     clear_board()
     show_grid(grid)
 
-    score = 0
+    return selected_tile
+
+
+def increment_score(grid, selected_tile, score):
+    col, row = definitions(selected_tile)
     if not grid[row][col]["mine"]:
         score += 1
-        print(score)
-    
-    return selected_tile
+        print(f"Your current score is {score}")
+    return score
 
 
 def game_over(grid, selected_tile):
@@ -137,11 +140,13 @@ def game_start():
     grid = create_grid(grid_width)
     place_random_mines(grid, num_of_mines)
     active_game = True
+    score = 0
     show_grid(grid)
 
     while active_game is True:
         selected_tile = user_select_tile(grid_width, grid)
         if selected_tile:
+            score = increment_score(grid, selected_tile, score)
             active_game = game_over(grid, selected_tile)
 
 
