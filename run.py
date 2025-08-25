@@ -111,14 +111,16 @@ def user_select_tile(grid_width, grid):
     if not grid[row][col]["mine"]:
         score += 1
         print(score)
+    
+    return selected_tile
 
 
-def game_over(grid):
+def game_over(grid, selected_tile):
     """
-    If user hits a mine, the board is revealed and the user is shown a 
+    If user hits a mine, the board is revealed and the user is shown a
     game over message
     """
-    col, row = definitions()
+    col, row = definitions(selected_tile)
     if grid[row][col]["mine"]:
         for row in grid:
             for cell in row:
@@ -126,6 +128,8 @@ def game_over(grid):
             clear_board()
             show_grid(grid)
         print("You Hit A Mine! You Lose!")
+        return False
+    return True
 
 
 def game_start():
@@ -136,7 +140,9 @@ def game_start():
     show_grid(grid)
 
     while active_game is True:
-        user_select_tile(grid_width, grid)
+        selected_tile = user_select_tile(grid_width, grid)
+        if selected_tile:
+            active_game = game_over(grid, selected_tile)
 
 
 game_start()
