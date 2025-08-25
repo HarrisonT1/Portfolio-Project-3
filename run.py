@@ -91,7 +91,7 @@ def definitions(selected_tile):
 
 def user_select_tile(grid_width, grid):
     selected_tile = input("Enter a tile using the format eg 'B3': ")
-    col, row = definitions()
+    col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
     # grid size.
     if not (0 <= col < grid_width):
@@ -112,13 +112,18 @@ def user_select_tile(grid_width, grid):
         score += 1
         print(score)
 
-    # If user hits a mine, the board is revealed and the user is shown a
-    # game over message
+
+def game_over(grid):
+    """
+    If user hits a mine, the board is revealed and the user is shown a 
+    game over message
+    """
+    col, row = definitions()
     if grid[row][col]["mine"]:
         for row in grid:
             for cell in row:
                 cell["revealed"] = True
-                clear_board()
+            clear_board()
             show_grid(grid)
         print("You Hit A Mine! You Lose!")
 
