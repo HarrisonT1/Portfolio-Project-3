@@ -79,15 +79,19 @@ def place_random_mines(grid, num_of_mines):
         grid[i][x]["mine"] = True
 
 
-def user_select_tile(grid_width, grid):
-    selected_tile = input("Enter a tile using the format eg 'B3': ")
-
+def definitions(selected_tile):
     col_let = selected_tile[0].upper()
     row_num = selected_tile[1:]
 
     col = ord(col_let) - ord('A')
     row = int(row_num) - 1
 
+    return col, row
+
+
+def user_select_tile(grid_width, grid):
+    selected_tile = input("Enter a tile using the format eg 'B3': ")
+    col, row = definitions()
     # Stops a user being able to select a x coordinate outside of the
     # grid size.
     if not (0 <= col < grid_width):
@@ -103,12 +107,20 @@ def user_select_tile(grid_width, grid):
     clear_board()
     show_grid(grid)
 
+    score = 0
+    if not grid[row][col]["mine"]:
+        score += 1
+        print(score)
+
     # If user hits a mine, the board is revealed and the user is shown a
     # game over message
     if grid[row][col]["mine"]:
-        
+        for row in grid:
+            for cell in row:
+                cell["revealed"] = True
+                clear_board()
+            show_grid(grid)
         print("You Hit A Mine! You Lose!")
-        return False
 
 
 def game_start():
