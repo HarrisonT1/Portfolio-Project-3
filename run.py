@@ -4,10 +4,17 @@ import os
 
 # imported from stackoverflow.com - see readme
 def clear_board():
+    """
+    This clears the terminal
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def grid_user_input():
+    """
+    This function asks the user to select how large they would want
+    the grid and how many mines they would like to place
+    """
     while True:
         try:
             print("Please enter an whole number between 10 and 20")
