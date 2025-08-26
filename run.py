@@ -8,8 +8,15 @@ def clear_board():
 
 
 def grid_user_input():
-    print("Please enter an whole number")
-    grid_width = int(input("How wide would you like your grid to be: "))
+    while True:
+        try:
+            print("Please enter an whole number")
+            grid_width = int(input("How wide would you like your grid to be: "))
+            if 10 <= grid_width <= 20:
+                break
+        except ValueError:
+            print("Please enter an integer (whole number) between 10 and 20")
+
     print("Please enter an whole number between 10 and 50")
     num_of_mines = int(input("How many mines would you like to place in the grid: "))
     clear_board()
