@@ -77,7 +77,10 @@ def show_grid(grid):
                     print(f"{'*':^{cell_width}}", end="")
                 else:
                     adj_mines = adjacent_mines(grid, y, x)
-                    print(f"{adj_mines:^{cell_width}}", end="")
+                    if adj_mines == 0:
+                        print(f"{' ':^{cell_width}}", end="")
+                    else:
+                        print(f"{adj_mines:^{cell_width}}", end="")
             else:
                 print(f"{'■':^{cell_width}}", end="")
         print()
