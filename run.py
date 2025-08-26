@@ -94,6 +94,9 @@ def show_grid(grid):
 
 
 def place_random_mines(grid, num_of_mines):
+    """
+    This randomly places mines throughout the grid
+    """
     grid_width = len(grid)
     every_cell = []
 
@@ -120,6 +123,9 @@ def definitions(selected_tile):
 
 
 def user_select_tile(grid_width, grid):
+    """
+    This function allows the user to select a grid coordinate with validation
+    """
     selected_tile = input("Enter a tile using the format eg 'B3': ")
     col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
@@ -141,6 +147,10 @@ def user_select_tile(grid_width, grid):
 
 
 def increment_score(grid, selected_tile, score):
+    """
+    This creates a score that tells the user how many revealed tiles
+    they have got
+    """
     col, row = definitions(selected_tile)
     if not grid[row][col]["mine"]:
         score += 1
@@ -182,6 +192,9 @@ def game_over(grid, selected_tile):
 
 
 def game_start():
+    """
+    This function is the 
+    """
     grid_width, num_of_mines = grid_user_input()
     grid = create_grid(grid_width)
     place_random_mines(grid, num_of_mines)
