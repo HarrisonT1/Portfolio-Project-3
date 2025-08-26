@@ -69,14 +69,15 @@ def show_grid(grid):
     # Y axis
     for y, row in enumerate(grid):
         print(f"{y+1:4} ", end="")
-        for cell in row:
+        for x, cell in enumerate(row):
             # this for loop determines if there should be a * or ■ if
             #  its a mine or safe
             if cell["revealed"] is True:
                 if cell["mine"] is True:
                     print(f"{'*':{cell_width}}", end="")
                 else:
-                    print(f"{' ':{cell_width}}", end="")
+                    adj_mines = adjacent_mines(grid, y, x)
+                    print(f"{adj_mines:{cell_width}}", end="")
             else:
                 print(f"{'■':{cell_width}}", end="")
         print()
@@ -135,6 +136,22 @@ def increment_score(grid, selected_tile, score):
         score += 1
         print(f"Your current score is {score}")
     return score
+
+
+def adjacent_mines(grid, row, col):
+    """
+    This function iterates through each adjacent tile (8) and look for a mine
+    If a mine is found it will increase the total amount of mines found
+    """
+    grid_size = len(grid)
+    mine_count = 0
+    for x in range(max(0, row - 1), min(grid_size, row + 2)):
+        for y in range(max(0, col - 1), min(grid_size, col + 2)):
+            if x == row and y == col:
+                continue
+            if grid[x][y]["mine"]:
+                mine_count += 1
+    return mine_count
 
 
 def game_over(grid, selected_tile):
