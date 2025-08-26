@@ -63,7 +63,7 @@ def show_grid(grid):
     print("     ", end="")
     for x in range(grid_size):
         letter = chr(ord('A') + x)
-        print(f"{letter:{cell_width}}", end="")
+        print(f"{letter:^{cell_width}}", end="")
     print()
 
     # Y axis
@@ -74,12 +74,12 @@ def show_grid(grid):
             #  its a mine or safe
             if cell["revealed"] is True:
                 if cell["mine"] is True:
-                    print(f"{'*':{cell_width}}", end="")
+                    print(f"{'*':^{cell_width}}", end="")
                 else:
                     adj_mines = adjacent_mines(grid, y, x)
-                    print(f"{adj_mines:{cell_width}}", end="")
+                    print(f"{adj_mines:^{cell_width}}", end="")
             else:
-                print(f"{'■':{cell_width}}", end="")
+                print(f"{'■':^{cell_width}}", end="")
         print()
 
 
