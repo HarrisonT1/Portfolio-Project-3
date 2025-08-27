@@ -140,6 +140,10 @@ def user_select_tile(grid_width, grid):
         print("invalid Y coordinate")
 
     grid[row][col]["revealed"] = True
+
+    if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
+        reveal_adjacent_empty(grid, row, col)
+
     clear_board()
     show_grid(grid)
 
@@ -156,6 +160,18 @@ def increment_score(grid, selected_tile, score):
         score += 1
         print(f"Your current score is {score}")
     return score
+
+
+def reveal_adjacent_empty(grid, row, col):
+    grid_size = len(grid)
+    for x in range(max(0, row - 1), min(grid_size, row + 2)):
+        for y in range(max(0, col - 1), min(grid_size, col + 2)):
+            if x == row and y == col:
+                continue
+            if not grid[x][y]["mine"] and not grid[x][y]["revealed"]:
+                grid[x][y]["revealed"] = True
+                if adjacent_mines(grid, x, y) == 0:
+                    reveal_adjacent_empty(grid, x, y)
 
 
 def adjacent_mines(grid, row, col):
@@ -193,7 +209,7 @@ def game_over(grid, selected_tile):
 
 def game_start():
     """
-    This function is the 
+    This function is the main function which calls the other functions in one.
     """
     grid_width, num_of_mines = grid_user_input()
     grid = create_grid(grid_width)
