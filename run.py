@@ -138,6 +138,7 @@ def user_select_tile(grid_width, grid):
 
     if not selected_tile[0].isalpha() or not selected_tile[1:].isdigit():
         message = "Invalid input! Use format like B3 or fB3."
+        return None
 
     col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
@@ -158,9 +159,9 @@ def user_select_tile(grid_width, grid):
         else:
             grid[row][col]["flag"] = not grid[row][col]["flag"]
             if grid[row][col]["flag"]:
-                message = "The flag on your selected tile has been removed"
-            else:
                 message = "Your selected tile has been flagged"
+            else:
+                message = "The flag on your selected tile has been removed"
     else:
         if not grid[row][col]["flag"]:
             grid[row][col]["revealed"] = True
@@ -247,7 +248,8 @@ def game_start():
 
     while active_game is True:
         selected_tile = user_select_tile(grid_width, grid)
-        if selected_tile:
+        col, row = definitions(selected_tile)
+        if grid[row][col]["revealed"]:
             score = increment_score(grid, selected_tile, score)
             active_game = game_over(grid, selected_tile)
 
