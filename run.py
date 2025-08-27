@@ -29,9 +29,9 @@ def grid_user_input():
 
     while True:
         try:
-            print("Please enter an whole number between 10 and 50")
+            print("Please enter an whole number between 10 and 30")
             num_of_mines = int(input("How many mines would you like to place in the grid: "))
-            if 10 <= num_of_mines <= 50:
+            if 10 <= num_of_mines <= 30:
                 break
             else:
                 print("This number is not within the range")
@@ -50,7 +50,7 @@ def create_grid(grid_width):
     for x in range(grid_width):
         row = []
         for y in range(grid_width):
-            cell = {"mine": False, "revealed": False}
+            cell = {"mine": False, "revealed": False, "flag": False}
             row.append(cell)
         grid.append(row)
     return grid
@@ -127,6 +127,11 @@ def user_select_tile(grid_width, grid):
     This function allows the user to select a grid coordinate with validation
     """
     selected_tile = input("Enter a tile using the format eg 'B3': ")
+
+    if not grid[row][col]["revealed"] and not grid[row][col]["flag"]:
+        if selected_tile.upper().startswith("?"):
+            grid[row][col]["flag"] = not grid[row][col]["flag"]
+
     col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
     # grid size.
