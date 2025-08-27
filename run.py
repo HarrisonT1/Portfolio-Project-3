@@ -89,7 +89,10 @@ def show_grid(grid):
                     else:
                         print(f"{adj_mines:^{cell_width}}", end="")
             else:
-                print(f"{'■':^{cell_width}}", end="")
+                if cell["flag"]:
+                    print(f"{'F':^{cell_width}}", end="")
+                else:
+                    print(f"{'■':^{cell_width}}", end="")
         print()
 
 
@@ -128,9 +131,9 @@ def user_select_tile(grid_width, grid):
     """
     selected_tile = input("Enter a tile using the format eg 'B3': ")
 
-    if not grid[row][col]["revealed"] and not grid[row][col]["flag"]:
-        if selected_tile.upper().startswith("?"):
-            grid[row][col]["flag"] = not grid[row][col]["flag"]
+    is_flag = selected_tile.upper().startswith("f")
+    if is_flag:
+        selected_tile = selected_tile[1:]
 
     col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
@@ -143,8 +146,22 @@ def user_select_tile(grid_width, grid):
     # grid size.
     if not (0 <= row < grid_width):
         print("invalid Y coordinate")
+        return True
 
-    grid[row][col]["revealed"] = True
+    if is_flag:
+        if grid[row][col]["revealed"]:
+            print("This tile is already revealed, no need to place a flag")
+        else:
+            grid[row][col]["flag"] = not grid[row][col]["flag"]
+            if grid[row][col]["flag"]:
+                print("The flag on your selected tile has been removed")
+            else:
+                print("Your selected tile has been flagged")
+    else:
+        if not grid[row][col]["flag"]:
+            grid[row][col]["revealed"] = True
+            if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
+                reveal_adjacent_empty(grid, row, col)
 
     if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
         reveal_adjacent_empty(grid, row, col)
