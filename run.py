@@ -129,45 +129,50 @@ def user_select_tile(grid_width, grid):
     """
     This function allows the user to select a grid coordinate with validation
     """
+    message = ""
     selected_tile = input("Enter a tile using the format eg 'B3': ")
 
-    is_flag = selected_tile.upper().startswith("f")
+    is_flag = selected_tile.startswith("#")
     if is_flag:
-        selected_tile = selected_tile[1:]
+        selected_tile = selected_tile[1:].strip()
+
+    if not selected_tile[0].isalpha() or not selected_tile[1:].isdigit():
+        message = "Invalid input! Use format like B3 or fB3."
 
     col, row = definitions(selected_tile)
     # Stops a user being able to select a x coordinate outside of the
     # grid size.
     if not (0 <= col < grid_width):
-        print("invalid X coordinate")
+        message = "invalid X coordinate"
         return True
 
     # Stops a user being able to select a y coordinate outside of the
     # grid size.
     if not (0 <= row < grid_width):
-        print("invalid Y coordinate")
+        message = "invalid Y coordinate"
         return True
 
     if is_flag:
         if grid[row][col]["revealed"]:
-            print("This tile is already revealed, no need to place a flag")
+            message = "This tile is already revealed, no need to place a flag"
         else:
             grid[row][col]["flag"] = not grid[row][col]["flag"]
             if grid[row][col]["flag"]:
-                print("The flag on your selected tile has been removed")
+                message = "The flag on your selected tile has been removed"
             else:
-                print("Your selected tile has been flagged")
+                message = "Your selected tile has been flagged"
     else:
         if not grid[row][col]["flag"]:
             grid[row][col]["revealed"] = True
             if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
                 reveal_adjacent_empty(grid, row, col)
-
-    if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
-        reveal_adjacent_empty(grid, row, col)
+        else:
+            message = "You need to remove the flag in order to reveal this tile"
 
     clear_board()
     show_grid(grid)
+    if message:
+        print(message)
 
     return selected_tile
 
@@ -178,7 +183,7 @@ def increment_score(grid, selected_tile, score):
     they have got
     """
     col, row = definitions(selected_tile)
-    if not grid[row][col]["mine"]:
+    if not grid[row][col]["mine"] and grid[row][col]["revealed"]:
         score += 1
         print(f"Your current score is {score}")
     return score
