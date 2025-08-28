@@ -3,6 +3,7 @@ import os
 from colorama import init, Fore, Back, Style
 init(autoreset=True)
 
+
 # imported from stackoverflow.com - see readme
 def clear_board():
     """
@@ -299,16 +300,21 @@ def game_start():
     while active_game is True:
         selected_tile = user_select_tile(grid_width, grid)
         col, row = definitions(selected_tile)
-        if grid[row][col]["revealed"]:
-            score = increment_score(grid, selected_tile, score)
-            active_game = game_over(grid, selected_tile)
 
-    if game_win(grid):
-        clear_board()
-        show_grid(grid)
-        print("Congratulations! You Win!")
-        print(f"Your score was: {score}")
-        active_game = False
+        if grid[row][col]["revealed"] and grid[row][col]["mine"]:
+            score = increment_score(grid, selected_tile, score)
+
+        if grid[row][col]["mine"]:
+            game_over(grid, selected_tile)
+            active_game = False
+            break
+
+        if game_win(grid):
+            clear_board()
+            show_grid(grid)
+            print("Congratulations! You Win!")
+            print(f"Your score was: {score}")
+            active_game = False
 
 
 def main_menu():
