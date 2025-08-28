@@ -13,18 +13,30 @@ def clear_board():
 def show_rules():
     clear_board()
     print("""
-          How to play Minesweeper
-            1. Select how large you would like the grid to be.
-            2. Choose how many mines you would like to be places in the grid.
-            3. Type a coordinate of a tile to reveal it using the format 'B3'
-            4. When a mine is revealed the user loses.
-            5. When all safe tiles are revealed the user wins.
-          Tips:
-            1. You can flag a suspected mine using the format '#b3'
-            2. You can remove a flag using same flagging format '#b3'
-            3. The numbers show you how many mines are adjacent to that tile.
+How to play Minesweeper
+    1. Select how large you would like the grid to be.
+    2. Choose how many mines you would like to be places in the grid.
+    3. Type a coordinate of a tile to reveal it using the format 'B3'
+    4. When a mine is revealed the user loses.
+    5. When all safe tiles are revealed the user wins.
+    6. Keep track of the amount of mines you flagged.
           """)
-    
+
+    input("Press Enter to return to the main menu")
+    clear_board()
+    return
+
+
+def show_tips():
+    clear_board()
+    print("""
+Tips to help you in minesweeper:
+    1. You can flag a suspected mine using the format '#b3'
+    2. You can remove a flag using same flagging format '#b3'
+    3. The numbers show you how many mines are adjacent to that tile.
+    4. Be patient as rushing can lead to simple mistakes
+          """)
+
     input("Press Enter to return to the main menu")
     clear_board()
     return
@@ -280,11 +292,11 @@ def main_menu():
     clear_board()
     while True:
         print(f"Welcome {name} to my Minesweeper! Please select an option")
-    
+
         print("""
-        "1. Play Minesweeper"
-        "2. Rules of Minesweeper"
-        "3. Leaderboard"
+"1. Play Minesweeper"
+"2. Rules of Minesweeper"
+"3. Tips for minesweeper"
         """)
 
         choice = input("select an option using numbers 1-3. ")
@@ -296,7 +308,7 @@ def main_menu():
             show_rules()
         elif choice == "3":
             clear_board()
-            show_leaderboard()
+            show_tips()
         else:
             print("That is not a valid option")
 
