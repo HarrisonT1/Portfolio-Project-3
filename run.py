@@ -254,4 +254,27 @@ def game_start():
             active_game = game_over(grid, selected_tile)
 
 
-game_start()
+def main_menu():
+    clear_board()
+    name = input("Please enter your name: ")
+    print(f"Welcome {name} to my Minesweeper! Please select an option")
+    print("""
+    "1. Play Minesweeper"
+    "2. Rules of Minesweeper"
+    "3. Leaderboard"
+    """)
+
+    choice = input("select an option using numbers 1-3. ")
+    if choice == "1":
+        clear_board()
+        game_start()
+    elif choice == "2":
+        clear_board()
+        show_rules()
+    elif choice == "3":
+        clear_board()
+        show_leaderboard()
+    else:
+        print("That is not a valid option")
+
+main_menu()
