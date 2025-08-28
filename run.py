@@ -257,6 +257,7 @@ def game_start():
 def main_menu():
     clear_board()
     name = input("Please enter your name: ")
+    clear_board()
     print(f"Welcome {name} to my Minesweeper! Please select an option")
     print("""
     "1. Play Minesweeper"
@@ -264,17 +265,18 @@ def main_menu():
     "3. Leaderboard"
     """)
 
-    choice = input("select an option using numbers 1-3. ")
-    if choice == "1":
-        clear_board()
-        game_start()
-    elif choice == "2":
-        clear_board()
-        show_rules()
-    elif choice == "3":
-        clear_board()
-        show_leaderboard()
-    else:
-        print("That is not a valid option")
+    while True:
+        choice = input("select an option using numbers 1-3. ")
+        if choice == "1":
+            clear_board()
+            game_start()
+        elif choice == "2":
+            clear_board()
+            show_rules()
+        elif choice == "3":
+            clear_board()
+            show_leaderboard()
+        else:
+            print("That is not a valid option")
 
 main_menu()
