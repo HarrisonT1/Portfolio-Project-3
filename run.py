@@ -10,6 +10,22 @@ def clear_board():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+def show_rules():
+    clear_board()
+    print("""
+          How to play Minesweeper
+            1. Select how large you would like the grid to be.
+            2. Choose how many mines you would like to be places in the grid.
+            3. Type a coordinate of a tile to reveal it using the format 'B3'
+            4. When a mine is revealed the user loses.
+            5. When all safe tiles are revealed the user wins.
+          Tips:
+            1. You can flag a suspected mine using the format '#b3'
+            2. You can remove a flag using same flagging format '#b3'
+            3. The numbers show you how many mines are adjacent to that tile.
+          """)
+
+
 def grid_user_input():
     """
     This function asks the user to select how large they would want
