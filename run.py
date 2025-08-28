@@ -289,14 +289,14 @@ def game_start():
 def main_menu():
     clear_board()
     name = input("Please enter your name: ")
+    name_upper = name[0].upper() + name[1:]
     clear_board()
     while True:
-        print(f"Welcome {name} to my Minesweeper! Please select an option")
-
+        print(f"Welcome {name_upper} to my Minesweeper! Please select an option")
         print("""
-"1. Play Minesweeper"
-"2. Rules of Minesweeper"
-"3. Tips for minesweeper"
+1. Play Minesweeper
+2. Rules of Minesweeper
+3. Tips for minesweeper
         """)
 
         choice = input("select an option using numbers 1-3. ")
