@@ -1,6 +1,7 @@
 import random
 import os
-
+from colorama import init, Fore, Back, Style
+init(autoreset=True)
 
 # imported from stackoverflow.com - see readme
 def clear_board():
@@ -119,7 +120,15 @@ def show_grid(grid):
                     if adj_mines == 0:
                         print(f"{' ':^{cell_width}}", end="")
                     else:
-                        print(f"{adj_mines:^{cell_width}}", end="")
+                        if adj_mines == 1:
+                            color = Fore.GREEN
+                        elif adj_mines == 2:
+                            color = Fore.YELLOW
+                        elif adj_mines == 3:
+                            color = Fore.RED
+                        else:
+                            color = Fore.CYAN
+                        print(color + f"{adj_mines:^{cell_width}}" + Fore.RESET, end="")
             else:
                 if cell["flag"]:
                     print(f"{'F':^{cell_width}}", end="")
@@ -162,7 +171,8 @@ def user_select_tile(grid_width, grid):
     This function allows the user to select a grid coordinate with validation
     """
     message = ""
-    selected_tile = input("Enter a tile using the format eg 'B3': ")
+    print("You can flag a tile using the format '#B3")
+    selected_tile = input("Enter a tile using the format 'B3': ")
 
     is_flag = selected_tile.startswith("#")
     if is_flag:
@@ -267,6 +277,14 @@ def game_over(grid, selected_tile):
     return True
 
 
+def game_win(grid):
+    for row in grid:
+        for cell in row:
+            if not cell["mine"] and not cell["revealed"]:
+                return False
+    return True
+
+
 def game_start():
     """
     This function is the main function which calls the other functions in one.
@@ -285,6 +303,13 @@ def game_start():
             score = increment_score(grid, selected_tile, score)
             active_game = game_over(grid, selected_tile)
 
+    if game_win(grid):
+        clear_board()
+        show_grid(grid)
+        print("Congratulations! You Win!")
+        print(f"Your score was: {score}")
+        active_game = False
+
 
 def main_menu():
     clear_board()
@@ -299,7 +324,7 @@ def main_menu():
 3. Tips for minesweeper
         """)
 
-        choice = input("select an option using numbers 1-3. ")
+        choice = input("Select an option using numbers 1-3. \n")
         if choice == "1":
             clear_board()
             game_start()
@@ -311,6 +336,7 @@ def main_menu():
             show_tips()
         else:
             print("That is not a valid option")
+            clear_board()
 
 
 main_menu()
