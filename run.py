@@ -316,6 +316,10 @@ def game_start():
             print(f"Your score was: {score}")
             active_game = False
 
+    input("Press Enter to return to the main menu").strip()
+    clear_board()
+    return
+
 
 def main_menu():
     clear_board()
