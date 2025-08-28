@@ -24,6 +24,10 @@ def show_rules():
             2. You can remove a flag using same flagging format '#b3'
             3. The numbers show you how many mines are adjacent to that tile.
           """)
+    
+    input("Press Enter to return to the main menu")
+    clear_board()
+    return
 
 
 def grid_user_input():
@@ -274,14 +278,15 @@ def main_menu():
     clear_board()
     name = input("Please enter your name: ")
     clear_board()
-    print(f"Welcome {name} to my Minesweeper! Please select an option")
-    print("""
-    "1. Play Minesweeper"
-    "2. Rules of Minesweeper"
-    "3. Leaderboard"
-    """)
-
     while True:
+        print(f"Welcome {name} to my Minesweeper! Please select an option")
+    
+        print("""
+        "1. Play Minesweeper"
+        "2. Rules of Minesweeper"
+        "3. Leaderboard"
+        """)
+
         choice = input("select an option using numbers 1-3. ")
         if choice == "1":
             clear_board()
@@ -294,5 +299,6 @@ def main_menu():
             show_leaderboard()
         else:
             print("That is not a valid option")
+
 
 main_menu()
