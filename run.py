@@ -24,7 +24,7 @@ How to play Minesweeper
     6. Keep track of the amount of mines you flagged.
           """)
 
-    input("Press Enter to return to the main menu")
+    input(Fore.GREEN + "Press Enter to return to the main menu")
     clear_board()
     return
 
@@ -39,7 +39,7 @@ Tips to help you in minesweeper:
     4. Be patient as rushing can lead to simple mistakes
           """)
 
-    input("Press Enter to return to the main menu")
+    input(Fore.GREEN + "Press Enter to return to the main menu")
     clear_board()
     return
 
@@ -49,29 +49,32 @@ def grid_user_input():
     This function asks the user to select how large they would want
     the grid and how many mines they would like to place
     """
+
     while True:
         try:
-            print("Please enter an whole number between 10 and 20")
-            grid_width = int(input("How wide would you like your grid to be: "))
+            print(Fore.GREEN + "Please enter an whole number between 10 and 20")
+            grid_width = int(input(Fore.GREEN + "How wide would you like your grid to be: "))
             if 10 <= grid_width <= 20:
                 break
             else:
-                print("This number is not within the range")
+                print(Fore.GREEN + "This number is not within the range")
         except ValueError:
-            print("Your number is invalid, please use an integer")
+            print(Fore.GREEN + "Your number is invalid, please use an integer")
     clear_board()
 
     while True:
+        print(Fore.GREEN, end="")
         try:
-            print("Please enter an whole number between 10 and 30")
-            num_of_mines = int(input("How many mines would you like to place in the grid: "))
+            print(Fore.GREEN + "Please enter an whole number between 10 and 30")
+            num_of_mines = int(input(Fore.GREEN + "How many mines would you like to place in the grid: "))
             if 10 <= num_of_mines <= 30:
                 break
             else:
-                print("This number is not within the range")
+                print(Fore.GREEN + "This number is not within the range")
         except ValueError:
-            print("Your number is invalid, please use an integer")
+            print(Fore.GREEN + "Your number is invalid, please use an integer")
 
+    print(Style.RESET_ALL)
     clear_board()
     return grid_width, num_of_mines
 
@@ -172,8 +175,8 @@ def user_select_tile(grid_width, grid):
     This function allows the user to select a grid coordinate with validation
     """
     message = ""
-    print("You can flag a tile using the format '#B3")
-    selected_tile = input("Enter a tile using the format 'B3': ")
+    print(Fore.GREEN + "You can flag a tile using the format '#B3")
+    selected_tile = input(Fore.GREEN + "Enter a tile using the format 'B3': ")
 
     is_flag = selected_tile.startswith("#")
     if is_flag:
@@ -323,18 +326,26 @@ def game_start():
 
 def main_menu():
     clear_board()
-    name = input("Please enter your name: ")
+    print(Fore.CYAN + Style.BRIGHT + """
+███╗   ███╗██╗███╗   ██╗███████╗███████╗██╗    ██╗███████╗██████╗ ███████╗██████╗ 
+████╗ ████║██║████╗  ██║██╔════╝██╔════╝██║    ██║██╔════╝██╔══██╗██╔════╝██╔══██╗
+██╔████╔██║██║██╔██╗ ██║█████╗  ███████╗██║ █╗ ██║█████╗  ██████╔╝█████╗  ██████╔╝
+██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ╚════██║██║███╗██║██╔══╝  ██╔═══╝ ██╔══╝  ██╔══██╗
+██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
+╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
+""" + Style.RESET_ALL)
+    name = input(Fore.CYAN + "Please enter your name: ")
     name_upper = name[0].upper() + name[1:]
     clear_board()
     while True:
-        print(f"Welcome {name_upper} to my Minesweeper! Please select an option")
-        print("""
+        print(Fore.MAGENTA + Style.BRIGHT + f"Welcome {name_upper} to my Minesweeper! Please select an option")
+        print(Fore.CYAN + Style.BRIGHT + """
 1. Play Minesweeper
 2. Rules of Minesweeper
 3. Tips for minesweeper
         """)
 
-        choice = input("Select an option using numbers 1-3. \n")
+        choice = input(Fore.GREEN + Style.BRIGHT + "Select an option using numbers 1-3. \n")
         if choice == "1":
             clear_board()
             game_start()
