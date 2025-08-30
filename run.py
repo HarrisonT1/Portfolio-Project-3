@@ -20,7 +20,6 @@ stats = SHEET.worksheet('stats')
 data = stats.get_all_values()
 
 
-
 # imported from stackoverflow.com - see readme
 def clear_board():
     """
@@ -55,6 +54,22 @@ Tips to help you in minesweeper:
     3. The numbers show you how many mines are adjacent to that tile.
     4. Be patient as rushing can lead to simple mistakes
           """)
+
+    input(Fore.GREEN + "Press Enter to return to the main menu")
+    clear_board()
+    return
+
+
+def show_stats():
+    clear_board()
+
+    headers = data[0]   # First row (titles)
+    values = data[1]
+
+    for i in range(len(headers)):
+        title = headers[i].strip()
+        value = values[i]
+        print(f"{title}: {value}")
 
     input(Fore.GREEN + "Press Enter to return to the main menu")
     clear_board()
@@ -359,10 +374,11 @@ def main_menu():
         print(Fore.CYAN + Style.BRIGHT + """
 1. Play Minesweeper
 2. Rules of Minesweeper
-3. Tips for minesweeper
+3. Tips for Minesweeper
+4. Minesweeper Stats
         """)
 
-        choice = input(Fore.GREEN + Style.BRIGHT + "Select an option using numbers 1-3. \n")
+        choice = input(Fore.GREEN + Style.BRIGHT + "Select an option using numbers 1-4. \n")
         if choice == "1":
             clear_board()
             game_start()
@@ -372,6 +388,9 @@ def main_menu():
         elif choice == "3":
             clear_board()
             show_tips()
+        elif choice == "4":
+            clear_board()
+            show_stats()
         else:
             print("That is not a valid option")
             clear_board()
