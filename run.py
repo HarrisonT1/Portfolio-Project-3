@@ -241,7 +241,7 @@ def user_select_tile(grid_width, grid):
         selected_tile = selected_tile[1:].strip()
 
     if not selected_tile[0].isalpha() or not selected_tile[1:].isdigit():
-        message = "Invalid input! Use format like B3 or fB3."
+        message = "Invalid input! Use format like B3 or #B3."
         return None
 
     col, row = definitions(selected_tile)
@@ -267,18 +267,17 @@ def user_select_tile(grid_width, grid):
             else:
                 message = "The flag on your selected tile has been removed"
     else:
-        if not grid[row][col]["flag"]:
+        if grid[row][col]["flag"]:
+            message = "You need to remove the flag in order to reveal this tile"
+        elif not grid[row][col]["revealed"]:
             grid[row][col]["revealed"] = True
             if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
                 reveal_adjacent_empty(grid, row, col)
-        else:
-            message = "You need to remove the flag in order to reveal this tile"
 
     clear_board()
     show_grid(grid)
     if message:
         print(message)
-
     return selected_tile
 
 
@@ -328,7 +327,7 @@ def game_over(grid, selected_tile, calced_time):
     game over message
     """
     col, row = definitions(selected_tile)
-    if grid[row][col]["mine"]:
+    if grid[row][col]["mine"] and grid[row][col]["revealed"] and not grid[row][col]["flag"]:
         for row in grid:
             for cell in row:
                 cell["revealed"] = True
@@ -336,7 +335,6 @@ def game_over(grid, selected_tile, calced_time):
             show_grid(grid)
         print("You Hit A Mine! You Lose!")
         print(f"You took {calced_time} before losing")
-        
         return False
     return True
 
@@ -382,12 +380,14 @@ def game_start():
         seconds = int(total_time % 60)
         calced_time = f"{minutes} minutes and {seconds} seconds"
 
-        if grid[row][col]["mine"]:
-            game_over(grid, selected_tile, calced_time)
-            update_stats(mines_hit=1, games_lost=1,)
-            active_game = False
-            break
+        # Game over
+        if grid[row][col]["revealed"]:
+            if grid[row][col]["mine"]:
+                game_over(grid, selected_tile, calced_time)
+                update_stats(mines_hit=1, games_lost=1,)
+                active_game = False
 
+        # Game win
         if game_win(grid):
             clear_board()
             show_grid(grid)
