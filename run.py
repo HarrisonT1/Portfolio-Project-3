@@ -333,7 +333,7 @@ def game_over(grid, selected_tile, calced_time):
                 cell["revealed"] = True
             clear_board()
             show_grid(grid)
-        print("You Hit A Mine! You Lose!")
+        print(Fore.RED + "You Hit A Mine! You Lose!")
         print(f"You took {calced_time} before losing")
         return False
     return True
@@ -344,6 +344,13 @@ def game_win(grid):
         for cell in row:
             if not cell["mine"] and not cell["revealed"]:
                 return False
+            
+    for row in grid:
+        for cell in row:
+            cell["revealed"] = True
+            
+    clear_board()
+    show_grid(grid)
     return True
 
 
@@ -391,7 +398,7 @@ def game_start():
         if game_win(grid):
             clear_board()
             show_grid(grid)
-            print("Congratulations! You Win!")
+            print(Fore.GREEN + "Congratulations! You Win!")
             print(f"Your score was: {score}")
             print(f"You took {calced_time} before winning")
             update_stats(games_won=1)
