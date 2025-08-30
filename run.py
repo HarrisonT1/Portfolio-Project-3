@@ -249,13 +249,15 @@ def user_select_tile(grid_width, grid):
     # grid size.
     if not (0 <= col < grid_width):
         message = "invalid X coordinate"
-        return True
+        print(Fore.RED + message)
+        return None
 
     # Stops a user being able to select a y coordinate outside of the
     # grid size.
     if not (0 <= row < grid_width):
         message = "invalid Y coordinate"
-        return True
+        print(Fore.RED + message)
+        return None
 
     if is_flag:
         if grid[row][col]["revealed"]:
@@ -344,11 +346,11 @@ def game_win(grid):
         for cell in row:
             if not cell["mine"] and not cell["revealed"]:
                 return False
-            
+
     for row in grid:
         for cell in row:
             cell["revealed"] = True
-            
+
     clear_board()
     show_grid(grid)
     return True
