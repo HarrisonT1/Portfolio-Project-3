@@ -3,6 +3,7 @@ from google.oauth2.service_account import Credentials
 import random
 import os
 from colorama import init, Fore, Style
+import time
 init(autoreset=True)
 
 SCOPE = [
@@ -88,7 +89,7 @@ def update_stats(games_played=0, mines_hit=0, safe_tiles=0, games_won=0, games_l
     data = stats.get_all_values()
 
     # this selects the line after the headings
-    values = [int(i) for i in data[1]]
+    values = [int(i) for i in data[1] if i != '']
 
     # This increases the value of each stat
     values[0] += games_played
@@ -321,7 +322,7 @@ def adjacent_mines(grid, row, col):
     return mine_count
 
 
-def game_over(grid, selected_tile):
+def game_over(grid, selected_tile, calced_time):
     """
     If user hits a mine, the board is revealed and the user is shown a
     game over message
@@ -334,6 +335,8 @@ def game_over(grid, selected_tile):
             clear_board()
             show_grid(grid)
         print("You Hit A Mine! You Lose!")
+        print(f"You took {calced_time} before losing")
+        
         return False
     return True
 
@@ -358,7 +361,11 @@ def game_start():
     show_grid(grid)
     update_stats(games_played=1)
 
+    start_time = time.time()
+
     while active_game is True:
+
+        update_stats(games_played=1)
         selected_tile = user_select_tile(grid_width, grid)
         if not selected_tile:
             continue
@@ -369,9 +376,15 @@ def game_start():
             score = increment_score(grid, selected_tile, score)
             update_stats(safe_tiles=1)
 
+        end_time = time.time()
+        total_time = end_time - start_time
+        minutes = int(total_time // 60)
+        seconds = int(total_time % 60)
+        calced_time = f"{minutes} minutes and {seconds} seconds"
+
         if grid[row][col]["mine"]:
-            game_over(grid, selected_tile)
-            update_stats(mines_hit=1, games_lost=1)
+            game_over(grid, selected_tile, calced_time)
+            update_stats(mines_hit=1, games_lost=1,)
             active_game = False
             break
 
@@ -380,6 +393,7 @@ def game_start():
             show_grid(grid)
             print("Congratulations! You Win!")
             print(f"Your score was: {score}")
+            print(f"You took {calced_time} before winning")
             update_stats(games_won=1)
             active_game = False
 
