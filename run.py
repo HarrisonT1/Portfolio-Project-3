@@ -61,19 +61,44 @@ Tips to help you in minesweeper:
 
 
 def show_stats():
+    """
+    This displayed the data from the spreadsheet, which is updated
+    in real time with the update_stats function
+    """
     clear_board()
 
-    headers = data[0]   # First row (titles)
+    stats = SHEET.worksheet('stats')
+    data = stats.get_all_values()
+
+    headers = data[0]
     values = data[1]
 
     for i in range(len(headers)):
         title = headers[i].strip()
         value = values[i]
-        print(f"{title}: {value}")
+        print(Fore.BLUE + f"{title}: {value}")
 
     input(Fore.GREEN + "Press Enter to return to the main menu")
     clear_board()
     return
+
+
+def update_stats(games_played=0, mines_hit=0, safe_tiles=0, games_won=0, games_lost=0):
+    stats = SHEET.worksheet('stats')
+    data = stats.get_all_values()
+
+    # this selects the line after the headings
+    values = [int(i) for i in data[1]]
+
+    # This increases the value of each stat
+    values[0] += games_played
+    values[1] += mines_hit
+    values[2] += safe_tiles
+    values[3] += games_won
+    values[4] += games_lost
+
+    # rows a2 through e2 are updated
+    stats.update('A2:E2', [values])
 
 
 def grid_user_input():
@@ -331,16 +356,22 @@ def game_start():
     active_game = True
     score = 0
     show_grid(grid)
+    update_stats(games_played=1)
 
     while active_game is True:
         selected_tile = user_select_tile(grid_width, grid)
+        if not selected_tile:
+            continue
+
         col, row = definitions(selected_tile)
 
-        if grid[row][col]["revealed"] and grid[row][col]["mine"]:
+        if grid[row][col]["revealed"] and not grid[row][col]["mine"]:
             score = increment_score(grid, selected_tile, score)
+            update_stats(safe_tiles=1)
 
         if grid[row][col]["mine"]:
             game_over(grid, selected_tile)
+            update_stats(mines_hit=1, games_lost=1)
             active_game = False
             break
 
@@ -349,6 +380,7 @@ def game_start():
             show_grid(grid)
             print("Congratulations! You Win!")
             print(f"Your score was: {score}")
+            update_stats(games_won=1)
             active_game = False
 
     input("Press Enter to return to the main menu").strip()
