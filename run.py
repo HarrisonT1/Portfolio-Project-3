@@ -500,4 +500,8 @@ def main_menu():
             clear_board()
 
 
-main_menu()
+try:
+    main_menu()
+    name = input("hello")
+except EOFError:
+    name = "default_name"
