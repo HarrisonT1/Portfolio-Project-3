@@ -454,20 +454,20 @@ def main_menu():
 ██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)  # noqa: E501
-    while True:
-        name = input(Fore.CYAN + "Please enter your name: ").strip()
-        if not name:
-            print(Fore.RED + "You need to input a username")
-            continue
-        if not name.isalpha():
-            print(Fore.RED + "You can only input letters, try again")
-            continue
-        name_upper = name[0].upper() + name[1:]
-        break
+    # while True:
+    #     name = input(Fore.CYAN + "Please enter your name: ").strip()
+    #     if not name:
+    #         print(Fore.RED + "You need to input a username")
+    #         continue
+    #     if not name.isalpha():
+    #         print(Fore.RED + "You can only input letters, try again")
+    #         continue
+    #     name_upper = name[0].upper() + name[1:]
+    #     break
     clear_board()
     while True:
         print(
-            f"{Fore.MAGENTA}{Style.BRIGHT}Welcome {name_upper} to my "
+            # f"{Fore.MAGENTA}{Style.BRIGHT}Welcome {name_upper} to my "
             "Minesweeper! Please select an option.")
         print(Fore.CYAN + Style.BRIGHT + """
 1. Play Minesweeper
@@ -476,24 +476,24 @@ def main_menu():
 4. Minesweeper Stats
         """)
 
-        choice = input(
-            Fore.GREEN + Style.BRIGHT
-            + "Select an option using numbers 1-4.\n")
-        if choice == "1":
-            clear_board()
-            game_start()
-        elif choice == "2":
-            clear_board()
-            show_rules()
-        elif choice == "3":
-            clear_board()
-            show_tips()
-        elif choice == "4":
-            clear_board()
-            show_stats()
-        else:
-            print("That is not a valid option")
-            clear_board()
+        # choice = input(
+        #     Fore.GREEN + Style.BRIGHT
+        #     + "Select an option using numbers 1-4.\n")
+        # if choice == "1":
+        #     clear_board()
+        #     game_start()
+        # elif choice == "2":
+        #     clear_board()
+        #     show_rules()
+        # elif choice == "3":
+        #     clear_board()
+        #     show_tips()
+        # elif choice == "4":
+        #     clear_board()
+        #     show_stats()
+        # else:
+        #     print("That is not a valid option")
+        #     clear_board()
 
 
 main_menu()
