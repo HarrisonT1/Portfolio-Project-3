@@ -454,8 +454,9 @@ def main_menu():
 ██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)  # noqa: E501
+    input("hello")
     while True:
-        name = input(Fore.CYAN + "Please enter your name: ").strip()
+        name = input("Please enter your name: ")
         if not name:
             print(Fore.RED + "You need to input a username")
             continue
