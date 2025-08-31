@@ -84,7 +84,12 @@ def show_stats():
     return
 
 
-def update_stats(games_played=0, mines_hit=0, safe_tiles=0, games_won=0, games_lost=0):
+def update_stats(
+        games_played=0,
+        mines_hit=0,
+        safe_tiles=0,
+        games_won=0,
+        games_lost=0):
     stats = SHEET.worksheet('stats')
     data = stats.get_all_values()
 
@@ -110,8 +115,12 @@ def grid_user_input():
 
     while True:
         try:
-            print(Fore.GREEN + "Please enter an whole number between 10 and 20")
-            grid_width = int(input(Fore.GREEN + "How wide would you like your grid to be: "))
+            print(
+                Fore.GREEN
+                + "Please enter an whole number between 10 and 20")
+            grid_width = int(
+                input(
+                    Fore.GREEN + "How wide would you like your grid to be: "))
             if 10 <= grid_width <= 20:
                 break
             else:
@@ -123,8 +132,13 @@ def grid_user_input():
     while True:
         print(Fore.GREEN, end="")
         try:
-            print(Fore.GREEN + "Please enter an whole number between 10 and 30")
-            num_of_mines = int(input(Fore.GREEN + "How many mines would you like to place in the grid: "))
+            print(
+                Fore.GREEN
+                + "Please enter an whole number between 10 and 30")
+            num_of_mines = int(
+                input(
+                    Fore.GREEN
+                    + "How many mines would you like to place in the grid: "))
             if 10 <= num_of_mines <= 30:
                 break
             else:
@@ -190,7 +204,10 @@ def show_grid(grid):
                             color = Fore.RED
                         else:
                             color = Fore.CYAN
-                        print(color + f"{adj_mines:^{cell_width}}" + Fore.RESET, end="")
+                        print(
+                            color + f"{adj_mines:^{cell_width}}"
+                            + Fore.RESET, end=""
+                            )
             else:
                 if cell["flag"]:
                     print(f"{'F':^{cell_width}}", end="")
@@ -270,10 +287,13 @@ def user_select_tile(grid_width, grid):
                 message = "The flag on your selected tile has been removed"
     else:
         if grid[row][col]["flag"]:
-            message = "You need to remove the flag in order to reveal this tile"
+            message = "You need to remove the flag to reveal this tile"
         elif not grid[row][col]["revealed"]:
             grid[row][col]["revealed"] = True
-            if not grid[row][col]["mine"] and adjacent_mines(grid, row, col) == 0:
+            if (
+                not grid[row][col]["mine"]
+                and adjacent_mines(grid, row, col) == 0
+            ):
                 reveal_adjacent_empty(grid, row, col)
 
     clear_board()
@@ -329,7 +349,11 @@ def game_over(grid, selected_tile, calced_time):
     game over message
     """
     col, row = definitions(selected_tile)
-    if grid[row][col]["mine"] and grid[row][col]["revealed"] and not grid[row][col]["flag"]:
+    if (
+        grid[row][col]["mine"]
+        and grid[row][col]["revealed"]
+        and not grid[row][col]["flag"]
+    ):
         for row in grid:
             for cell in row:
                 cell["revealed"] = True
@@ -420,7 +444,7 @@ def main_menu():
 ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ╚════██║██║███╗██║██╔══╝  ██╔═══╝ ██╔══╝  ██╔══██╗
 ██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
-""" + Style.RESET_ALL)
+""" + Style.RESET_ALL)  # noqa: E501
     while True:
         name = input(Fore.CYAN + "Please enter your name: ").strip()
         if not name:
@@ -433,7 +457,9 @@ def main_menu():
         break
     clear_board()
     while True:
-        print(Fore.MAGENTA + Style.BRIGHT + f"Welcome {name_upper} to my Minesweeper! Please select an option")
+        print(
+            f"{Fore.MAGENTA}{Style.BRIGHT}Welcome {name_upper} to my "
+            "Minesweeper! Please select an option. \n")
         print(Fore.CYAN + Style.BRIGHT + """
 1. Play Minesweeper
 2. Rules of Minesweeper
@@ -441,7 +467,9 @@ def main_menu():
 4. Minesweeper Stats
         """)
 
-        choice = input(Fore.GREEN + Style.BRIGHT + "Select an option using numbers 1-4. \n")
+        choice = input(
+            Fore.GREEN + Style.BRIGHT
+            + "Select an option using numbers 1-4.\n")
         if choice == "1":
             clear_board()
             game_start()
