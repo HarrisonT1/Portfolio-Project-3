@@ -77,7 +77,7 @@ def show_stats():
     for i in range(len(headers)):
         title = headers[i].strip()
         value = values[i]
-        print(Fore.BLUE + f"{title}: {value}")
+        print(Fore.GREEN + f"{title}: {value}")
 
     input(Fore.GREEN + "Press Enter to return to the main menu")
     clear_board()
@@ -124,9 +124,9 @@ def grid_user_input():
             if 10 <= grid_width <= 20:
                 break
             else:
-                print(Fore.GREEN + "This number is not within the range")
+                print(Fore.RED + "This number is not within the range")
         except ValueError:
-            print(Fore.GREEN + "Your number is invalid, please use an integer")
+            print(Fore.RED + "Your number is invalid, please use an integer")
     clear_board()
 
     while True:
@@ -142,9 +142,9 @@ def grid_user_input():
             if 10 <= num_of_mines <= 30:
                 break
             else:
-                print(Fore.GREEN + "This number is not within the range")
+                print(Fore.RED + "This number is not within the range")
         except ValueError:
-            print(Fore.GREEN + "Your number is invalid, please use an integer")
+            print(Fore.RED + "Your number is invalid, please use an integer")
 
     print(Style.RESET_ALL)
     clear_board()
@@ -259,6 +259,7 @@ def user_select_tile(grid_width, grid):
 
     if not selected_tile[0].isalpha() or not selected_tile[1:].isdigit():
         message = "Invalid input! Use format like B3 or #B3."
+        print(Fore.RED + message)
         return None
 
     col, row = definitions(selected_tile)
@@ -286,8 +287,16 @@ def user_select_tile(grid_width, grid):
             else:
                 message = "The flag on your selected tile has been removed"
     else:
-        if grid[row][col]["flag"]:
-            message = "You need to remove the flag to reveal this tile"
+        if grid[row][col]["revealed"]:
+            message = Fore.RED + "This tile is already revealed"
+            print(message)
+            return None
+        elif grid[row][col]["flag"]:
+            message = (
+                Fore.RED
+                + "You need to remove the flag to reveal this tile")
+            print(message)
+            return None
         elif not grid[row][col]["revealed"]:
             grid[row][col]["revealed"] = True
             if (
@@ -459,7 +468,7 @@ def main_menu():
     while True:
         print(
             f"{Fore.MAGENTA}{Style.BRIGHT}Welcome {name_upper} to my "
-            "Minesweeper! Please select an option. \n")
+            "Minesweeper! Please select an option.")
         print(Fore.CYAN + Style.BRIGHT + """
 1. Play Minesweeper
 2. Rules of Minesweeper
