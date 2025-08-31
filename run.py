@@ -99,7 +99,7 @@ def update_stats(games_played=0, mines_hit=0, safe_tiles=0, games_won=0, games_l
     values[4] += games_lost
 
     # rows a2 through e2 are updated
-    stats.update('A2:E2', [values])
+    stats.update([values], 'A2:E2')
 
 
 def grid_user_input():
@@ -421,8 +421,16 @@ def main_menu():
 ██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)
-    name = input(Fore.CYAN + "Please enter your name: ")
-    name_upper = name[0].upper() + name[1:]
+    while True:
+        name = input(Fore.CYAN + "Please enter your name: ").strip()
+        if not name:
+            print(Fore.RED + "You need to input a username")
+            continue
+        if not name.isalpha():
+            print(Fore.RED + "You can only input letters, try again")
+            continue
+        name_upper = name[0].upper() + name[1:]
+        break
     clear_board()
     while True:
         print(Fore.MAGENTA + Style.BRIGHT + f"Welcome {name_upper} to my Minesweeper! Please select an option")
