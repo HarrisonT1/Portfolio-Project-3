@@ -454,7 +454,10 @@ def main_menu():
 ██║ ╚═╝ ██║██║██║ ╚████║███████║███████║╚███╔███╔╝███████╗██║     ███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)  # noqa: E501
-    input("hello")
+    try:
+        name = input("hello")
+    except EOFError:
+        name = "default_name"
     while True:
         name = input("Please enter your name: ")
         if not name:
