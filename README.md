@@ -48,11 +48,26 @@ Minesweeper can target all age ranges from children testing their puzzle solving
 - The user should expect engagement from the game, in the form of a name input
 - The user should expect a list of rules to improve their time playing
 ### User Manual
+#### Home Screen
+At first the user is presented with large blue text 'MINESWEEPER' and an input for the username below it.
+Upon entering a valid username they are taken to the main menu of the game.
+<details>
+    <summary>Home screen image</summary>
+    <img src="assets/readme-images/user-manual/home-screen.png">
+</details>
+
 #### Main Menu
+When reaching the main menu the username inputted name is displayed at the top of the console with a welcome message.
+They are also given a list of 4 options to pick from with an input at the bottom for their choice.
+<details>
+    <summary>Main menu image</summary>
+    <img src="assets/readme-images/user-manual/main-menu-image.png">
+</details>
+
+#### Play
 #### Game rules
 #### Game tips
 #### Game stats
-#### Play
 
 ## User Stories
 ### Users
