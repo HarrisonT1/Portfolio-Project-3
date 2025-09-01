@@ -31,6 +31,7 @@
 
 ## Project Goals
 ### User Goals
+
 ### Site Owner Goals
 
 ## User Experience
@@ -46,6 +47,15 @@
 
 ## User Stories
 ### Users
+1. As a player of the game, I would like to select the difficulty of the game before playing in the form of grid size and amount of mines.
+2. As a player of the game, I would like to be able to restart the game quickly after finishing the previous one.
+3. As a player of the game, I would like to be able to read the rules to understand the game.
+4. As a player of the game, I would like to have fun playing the game.
+5. As a player of the game, I would like the game to be simple and easy to understand.
+6. As a player of the game, I would like to be able to enter my name so it feel more engaging.
+7. As a player of the game, I would like to be able to see my score at the end of the game.
+8. As a player of the game, I would like to be able to see my time taken at the end of the game.
+9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
 ### Site Owner
 
 ## Technical Design
