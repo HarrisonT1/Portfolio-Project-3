@@ -120,8 +120,8 @@ After the list the user hits an input which will return them to the main menu.
 7. As a player of the game, I would like to be able to see my score at the end of the game.
 8. As a player of the game, I would like to be able to see my time taken at the end of the game.
 9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
-### Site Owner
 
+### Site Owner
 10. As the site owner, I would like to provide a fun and addicting game to users.
 11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
@@ -150,6 +150,7 @@ This project was built using [Python3](https://www.python.org/)
 - [Google Sheets](https://workspace.google.com/products/sheets/) - This was used to store the data 
 - [Google Cloud Platform](https://cloud.google.com/cloud-console/) - This was used to allow google sheets to communicate with my code
 - [CI linter](https://pep8ci.herokuapp.com/) - This was used to test my code for errors
+
 ### Libraries
 - gspread - This was used to link my project to a google sheet
 - google.oauth2.service_account - This was used to import personal credentials into my project to allow it to communite with the google spreadsheet, these are stored in a JSON file hidden by the gitignore folder
@@ -161,7 +162,27 @@ This project was built using [Python3](https://www.python.org/)
 - time - This was used to add a timer to the game.
 
 ## Features
+
+### Home screen
+My homescreen has a simple design with a large title 'MINESWEEPER', which is occupanied by an input function to ask the user for their name.
+<details>
+    <summary>Homescreen image</summary>
+    <img src="assets/readme-images/user-manual/home-screen.png">
+</details>
+
 ### Main menu
+when the user enters a name which passes the validation they are taken to the main menu, this shows a welcome message with the users name in it. <br>
+This also includes 4 options of:
+- play game
+- Rules
+- Tips
+- Stats
+They are then given a prompt to select one of the 4 options using the numbers 1-4.
+<details>
+    <summary>Main menu image</summary>
+    <img src="assets/readme-images/user-manual/main-menu-image.png">
+</details>
+
 ### Enter name
 ### Users greeting
 ### Game rules
@@ -171,6 +192,12 @@ This project was built using [Python3](https://www.python.org/)
 ### Middle of game
 ### Finished Game
 ### User Input Validation
+
+<!-- <details>
+    <summary></summary>
+    <img src="">
+</details> -->
+
 
 ## Validation
 
