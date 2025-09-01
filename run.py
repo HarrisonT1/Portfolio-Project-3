@@ -455,7 +455,7 @@ def main_menu():
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)  # noqa: E501
     while True:
-        name = input("Please enter your name: ")
+        name = input("Please enter your name:\n")
         if not name:
             print(Fore.RED + "You need to input a username")
             continue
