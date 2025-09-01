@@ -40,6 +40,7 @@
 - Include user engagement in the form of a name input.
 
 ## User Experience
+
 ### Target Audience
 Minesweeper can target all age ranges from children testing their puzzle solving to older adults casually playing games.
 ### User Requirements and Expectations
@@ -47,7 +48,9 @@ Minesweeper can target all age ranges from children testing their puzzle solving
 - The user should be shown the correct format for inputs, with error displaying what was wrong
 - The user should expect engagement from the game, in the form of a name input
 - The user should expect a list of rules to improve their time playing
+
 ### User Manual
+
 #### Home Screen
 At first the user is presented with large blue text 'MINESWEEPER' and an input for the username below it.
 Upon entering a valid username they are taken to the main menu of the game.
@@ -65,9 +68,44 @@ They are also given a list of 4 options to pick from with an input at the bottom
 </details>
 
 #### Play
+When the user decides to play the game they are given an option to select their grid size and mine count.<br>
+This ranges from a 10x10 to a 20x20 for the grid size, and 10-30 mines. <br>
+After selection their game options they are displayed the minesweeper grid.
+
+<details>
+    <summary>Game options</summary>
+    <img src="assets/readme-images/user-manual/grid-input.png"><br>
+    <img src="assets/readme-images/user-manual/mine-input.png"><br>
+    <img src="assets/readme-images/user-manual/game-grid.png">
+</details>
+
 #### Game rules
+If the user selected the second option they are taken to the rules tab. <br>
+This includes a list of instructions for playing Minesweeper to help the user. <br>
+After the list the user hits an input which will return them to the main menu
+<details>
+    <summary>Game rules</summary>
+    <img src="assets/readme-images/user-manual/rules-interface.png">
+</details>
+
 #### Game tips
+If the user selected the thrid option they are taken to the tips tab. <br>
+This is a list of tips to help the user succeed when playing the game. <br>
+After the list the user hits an input which will return them to the main menu
+<details>
+    <summary>Game tips</summary>
+    <img src="assets/readme-images/user-manual/tips-interface.png">
+</details>
+
 #### Game stats
+If the user selected the fourth option they are taken to the stats tab. <br>
+This is a list of stats the user can access that is automatically updated from a google spreadsheet as they play. <br>
+After the list the user hits an input which will return them to the main menu.
+
+<details>
+    <summary>Game stats</summary>
+    <img src="assets/readme-images/user-manual/game-stats.png">
+</details>
 
 ## User Stories
 ### Users
