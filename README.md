@@ -28,3 +28,56 @@
   - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
+
+## Project Goals
+### User Goals
+### Site Owner Goals
+
+## User Experience
+### Target Audience
+### User Requirements and Expectations
+
+### User Manual
+#### Main Menu
+#### Game rules
+#### Game tips
+#### Game stats
+#### Play
+
+## User Stories
+### Users
+### Site Owner
+
+## Technical Design
+### Flowchart
+
+## Technologies Used
+### Languages
+### Frameworks & Tools
+### Libraries
+
+## Features
+### Main menu
+### Enter name
+### Users greeting
+### Game rules
+### Game tips
+### Game stats
+### Game start
+### Finished Game
+### User Input Validation
+
+## Validation
+
+## Testing
+### Manual Testing
+### Automated Testing
+
+## Bugs
+
+## Deployment
+### Render
+
+## Credits
+### Code
+## Acknowledgements
