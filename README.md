@@ -163,14 +163,14 @@ This project was built using [Python3](https://www.python.org/)
 
 ## Features
 
-### Home screen
+### Home screen + Enter name
 My homescreen has a simple design with a large title 'MINESWEEPER', which is occupanied by an input function to ask the user for their name.
 <details>
     <summary>Homescreen image</summary>
     <img src="assets/readme-images/user-manual/home-screen.png">
 </details>
 
-### Main menu
+### Main menu + Users greeting
 when the user enters a name which passes the validation they are taken to the main menu, this shows a welcome message with the users name in it. <br>
 This also includes 4 options of:
 - play game
@@ -183,10 +183,24 @@ They are then given a prompt to select one of the 4 options using the numbers 1-
     <img src="assets/readme-images/user-manual/main-menu-image.png">
 </details>
 
-### Enter name
-### Users greeting
+
 ### Game rules
+The game rules tab explains to the user how to play minesweeper, if they are a first time player.
+There is also a prompt to allow the user to return back to the main menu once they have finished reading the rules.
+<details>
+    <summary>rules tab</summary>
+    <img src="assets/readme-images/user-manual/rules-interface.png">
+</details>
+
 ### Game tips
+
+<details>
+The tips tab gives useful tips to the user to help them succeed when they play the game.
+There is also a prompt to allow the user to return back to the main menu once they have finished reading the tips.
+    <summary>Tips tab</summary>
+    <img src="assets/readme-images/user-manual/tips-interface.png">
+</details>
+
 ### Game stats
 ### Game start
 ### Middle of game
