@@ -139,9 +139,26 @@ My flowchart was made using the VS Code extention called 'Draw.io', making a flo
 </details>
 
 ## Technologies Used
+
 ### Languages
+This project was built using [Python3](https://www.python.org/)
+
 ### Frameworks & Tools
+- [draw.io](https://www.drawio.com/) - This was used to create my flowchart from the VS Code extention
+- [Github](https://github.com/)
+- Github Pages
+- [Google Sheets](https://workspace.google.com/products/sheets/) - This was used to store the data 
+- [Google Cloud Platform](https://cloud.google.com/cloud-console/) - This was used to allow google sheets to communicate with my code
+- [CI linter](https://pep8ci.herokuapp.com/) - This was used to test my code for errors
 ### Libraries
+- gspread - This was used to link my project to a google sheet
+- google.oauth2.service_account - This was used to import personal credentials into my project to allow it to communite with the google spreadsheet, these are stored in a JSON file hidden by the gitignore folder
+<br>
+
+- random - This was imported to allow me to randomise where the mines are placed in each new game.
+- os - This was imported to add a function to clear the console.
+- [colorama](https://pypi.org/project/colorama/) - This was used to colour text and add the title screen.
+- time - This was used to add a timer to the game.
 
 ## Features
 ### Main menu
@@ -151,6 +168,7 @@ My flowchart was made using the VS Code extention called 'Draw.io', making a flo
 ### Game tips
 ### Game stats
 ### Game start
+### Middle of game
 ### Finished Game
 ### User Input Validation
 
