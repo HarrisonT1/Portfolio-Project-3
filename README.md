@@ -31,9 +31,13 @@
 
 ## Project Goals
 ### User Goals
-
+- To play a fun and engaging game
+- Play quickly without a long setup
+- Track progress using scores and times
 ### Site Owner Goals
-
+- To create a fun and engaging game
+- Allow users to play quickly without difficulty
+- Include user engagement in the form of a name input.
 ## User Experience
 ### Target Audience
 ### User Requirements and Expectations
