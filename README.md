@@ -57,7 +57,11 @@
 8. As a player of the game, I would like to be able to see my time taken at the end of the game.
 9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
 ### Site Owner
-
+10. As the site owner, I would like to provide a fun and addicting game to users.
+11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
+12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
+14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
+15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
 ## Technical Design
 ### Flowchart
 
