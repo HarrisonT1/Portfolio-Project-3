@@ -108,7 +108,9 @@ After the list the user hits an input which will return them to the main menu.
 </details>
 
 ## User Stories
+
 ### Users
+
 1. As a player of the game, I would like to select the difficulty of the game before playing in the form of grid size and amount of mines.
 2. As a player of the game, I would like to be able to restart the game quickly after finishing the previous one.
 3. As a player of the game, I would like to be able to read the rules to understand the game.
@@ -119,13 +121,22 @@ After the list the user hits an input which will return them to the main menu.
 8. As a player of the game, I would like to be able to see my time taken at the end of the game.
 9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
 ### Site Owner
+
 10. As the site owner, I would like to provide a fun and addicting game to users.
 11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
 14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
 15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
+
 ## Technical Design
+For python the best method to plan a project is to use a flowchart, this breaks down each function and makes it very clear when you start creating your project
+
 ### Flowchart
+My flowchart was made using the VS Code extention called 'Draw.io', making a flowchart made it really easy to create the functions.
+<details>
+    <summary>Flowchart</summary>
+    <img src="assets/readme-images/flow-chart.png">
+</details>
 
 ## Technologies Used
 ### Languages
