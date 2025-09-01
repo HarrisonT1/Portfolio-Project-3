@@ -496,6 +496,4 @@ def main_menu():
             clear_board()
 
 
-
 main_menu()
-
