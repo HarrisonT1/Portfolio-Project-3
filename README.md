@@ -38,10 +38,15 @@
 - To create a fun and engaging game
 - Allow users to play quickly without difficulty
 - Include user engagement in the form of a name input.
+
 ## User Experience
 ### Target Audience
+Minesweeper can target all age ranges from children testing their puzzle solving to older adults casually playing games.
 ### User Requirements and Expectations
-
+- The user should expect no error to occur during playing
+- The user should be shown the correct format for inputs, with error displaying what was wrong
+- The user should expect engagement from the game, in the form of a name input
+- The user should expect a list of rules to improve their time playing
 ### User Manual
 #### Main Menu
 #### Game rules
