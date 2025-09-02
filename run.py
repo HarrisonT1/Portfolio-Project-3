@@ -455,14 +455,17 @@ def main_menu():
 ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝
 """ + Style.RESET_ALL)  # noqa: E501
     while True:
-        name = input("Please enter your name:\n")
-        if not name:
-            print(Fore.RED + "You need to input a username")
-            continue
-        if not name.isalpha():
-            print(Fore.RED + "You can only input letters, try again")
-            continue
-        name_upper = name[0].upper() + name[1:]
+        try:
+            name = input("Please enter your name:\n")
+            if not name:
+                print(Fore.RED + "You need to input a username")
+                continue
+            if not name.isalpha():
+                print(Fore.RED + "You can only input letters, try again")
+                continue
+            name_upper = name[0].upper() + name[1:]
+        except EOFError:
+            pass
         break
     clear_board()
     while True:
