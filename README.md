@@ -277,6 +277,11 @@ There are multiple validations thoughout the game including:
 
 ## Bugs
 
+| **Bug** | **Fix** |
+| ------- | ------- |
+| The terminal limit was set to 79 therefore I had to reduce my lines to fit within the pep8 guidelines | To fix this I had to reduce this by splitting the lines down while keeping the same functionality |
+| I had countless errors that stated I cant have white spaces after lines | To fix this I simpily removed the white spaces marked in yellow underline by VSCode |
+| Countless errors that would show to many or not enough blank spaces between functions | To fix this I removed or added the appropiate amount of empty line indicated by VSCode's yellow underline
 ## Deployment
 ### Render
 I deployed my project to [render](https://dashboard.render.com/) as recommened by my mentor, these are the steps I took inorder deploy it.
