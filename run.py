@@ -496,12 +496,4 @@ def main_menu():
             clear_board()
 
 
-# main_menu()
-def test_fuction():
-    print("select an option")
-    option = "1) game \n2) rules\n"
-
-
-if __name__ == "__main__":
-    print("test code")
-    test_fuction()
+main_menu()
