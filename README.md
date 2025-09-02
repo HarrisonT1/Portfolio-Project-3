@@ -324,3 +324,5 @@ node index.js
 ## Credits
 ### Code
 ## Acknowledgements
+Huge thanks to Code Institute for this opportunity, this project was made for my portfolio project 3 within Code Institute's course.
+Massive thanks to my mentor [Mo Shami](https://www.linkedin.com/in/moshami/) and my friend [Mike Ralph](https://www.linkedin.com/in/mike-ralph-891757112/) as well as the slack community and the Code Institute learning tutors for the help along the way.
