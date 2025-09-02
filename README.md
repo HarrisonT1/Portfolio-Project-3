@@ -297,11 +297,40 @@ There are multiple validations thoughout the game including:
 | Rules page | User can select rules page from the main menu | Takes the user to the rules page | Working as expected |
 
 4. As a player of the game, I would like to have fun playing the game.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Score system | reveal correct tiles | As user plays their score is increased for each safe tile revealed | Working as expected |
+
 5. As a player of the game, I would like the game to be simple and easy to understand.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| User guidence | Follow displayed instructions | User are displayed with prompts that guide them with what to input | Working as expected |
+
 6. As a player of the game, I would like to be able to enter my name so it feel more engaging.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Username input | Upon starting the programme enter username | Username is taken and inputted into the welcome message | Working as expected |
+
 7. As a player of the game, I would like to be able to see my score at the end of the game.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Score display | As user plays the score is displayed | Score is displayed as user reveals safe tiles | Working as expected |
+
 8. As a player of the game, I would like to be able to see my time taken at the end of the game.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Time display | Time is displayed at the end of the game | Time starts as grid is shown until they fail | Working as expected |
+
 9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
 
 ### Site Owner
 10. As the site owner, I would like to provide a fun and addicting game to users.
