@@ -117,11 +117,11 @@ def grid_user_input():
         try:
             print(
                 Fore.GREEN
-                + "Please enter an whole number between 10 and 20")
+                + "Please enter an whole number between 10 and 18")
             grid_width = int(
                 input(
                     Fore.GREEN + "How wide would you like your grid to be: "))
-            if 10 <= grid_width <= 20:
+            if 10 <= grid_width <= 18:
                 break
             else:
                 print(Fore.RED + "This number is not within the range")

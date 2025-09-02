@@ -69,7 +69,7 @@ They are also given a list of 4 options to pick from with an input at the bottom
 
 #### Play
 When the user decides to play the game they are given an option to select their grid size and mine count.<br>
-This ranges from a 10x10 to a 20x20 for the grid size, and 10-30 mines. <br>
+This ranges from a 10x10 to a 18x18 for the grid size, and 10-30 mines. <br>
 After selection their game options they are displayed the minesweeper grid.
 
 <details>
