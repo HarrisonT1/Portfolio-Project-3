@@ -99,7 +99,7 @@ After the list the user hits an input which will return them to the main menu
 </details>
 
 #### Game tips
-If the user selected the thrid option they are taken to the tips tab. <br>
+If the user selected the third option they are taken to the tips tab. <br>
 This is a list of tips to help the user succeed when playing the game. <br>
 After the list the user hits an input which will return them to the main menu
 <details>
@@ -129,11 +129,11 @@ After the list the user hits an input which will return them to the main menu.
 6. As a player of the game, I would like to be able to enter my name so it feel more engaging.
 7. As a player of the game, I would like to be able to see my score at the end of the game.
 8. As a player of the game, I would like to be able to see my time taken at the end of the game.
-9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
+9. As a player of the game, I would like to be able to flag tiles that I think are dangerous.
 
 ### Site Owner
 10. As the site owner, I would like to provide a fun and addicting game to users.
-11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
+11. As the site owner, I would like to provide the users with a difficulty selector in the form of grid size and amount of mines.
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
 13. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
 14. As the site owner, I would like to provide a clear and simple game interface for the user to use.
@@ -142,7 +142,7 @@ After the list the user hits an input which will return them to the main menu.
 For python the best method to plan a project is to use a flowchart, this breaks down each function and makes it very clear when you start creating your project
 
 ### Flowchart
-My flowchart was made using the VS Code extention called 'Draw.io', making a flowchart made it really easy to create the functions.
+My flowchart was made using the VS Code extension called 'Draw.io', making a flowchart made it really easy to create the functions.
 <details>
     <summary>Flowchart</summary>
     <img src="assets/readme-images/flow-chart.png">
@@ -154,7 +154,7 @@ My flowchart was made using the VS Code extention called 'Draw.io', making a flo
 This project was built using [Python3](https://www.python.org/)
 
 ### Frameworks & Tools
-- [draw.io](https://www.drawio.com/) - This was used to create my flowchart from the VS Code extention
+- [draw.io](https://www.drawio.com/) - This was used to create my flowchart from the VS Code extension
 - [Github](https://github.com/)
 - Github Pages
 - [Google Sheets](https://workspace.google.com/products/sheets/) - This was used to store the data 
@@ -163,7 +163,7 @@ This project was built using [Python3](https://www.python.org/)
 
 ### Libraries
 - gspread - This was used to link my project to a google sheet
-- google.oauth2.service_account - This was used to import personal credentials into my project to allow it to communite with the google spreadsheet, these are stored in a JSON file hidden by the gitignore folder
+- google.oauth2.service_account - This was used to import personal credentials into my project to allow it to communicate with the google spreadsheet, these are stored in a JSON file hidden by the gitignore folder
 <br>
 
 - random - This was imported to allow me to randomise where the mines are placed in each new game.
@@ -174,7 +174,7 @@ This project was built using [Python3](https://www.python.org/)
 ## Features
 
 ### Home screen + Enter name
-My homescreen has a simple design with a large title 'MINESWEEPER', which is occupanied by an input function to ask the user for their name.
+My homescreen has a simple design with a large title 'MINESWEEPER', which is accompanied by an input function to ask the user for their name.
 <details>
     <summary>Homescreen image</summary>
     <img src="assets/readme-images/user-manual/home-screen.png">
@@ -225,7 +225,7 @@ User stories covered: 12
 
 ### Game start
 When the game starts the user is displayed with two inputs that asks for a grid size and a mine amount. <br>
-When the inputs are successfully inputted they are shown a grid with labeled x and y axis' with an input that allows them to select a coordinate.
+When the inputs are successfully inputted they are shown a grid with labelled x and y axis' with an input that allows them to select a coordinate.
 A user can mark a tile using a '#' before the coordinate '#b3'
 <details>
     <summary>Game grid</summary>
@@ -246,7 +246,7 @@ When a user selects a tile it is revealed, if it is a safe tile, all other safe 
 User stories covered: 9
 
 ### Finished Game
-When a user either reveals all safe tiles or hits a mine when revealing a tile, they are shown the enitre revealed grid.
+When a user either reveals all safe tiles or hits a mine when revealing a tile, they are shown the entire revealed grid.
 There is also a prompt to allow the user to return back to the main menu once they have finished the game.
 This is also where their score and time is revealed
 User stories covered: 7, 8, 2
@@ -262,7 +262,7 @@ User stories covered: 7, 8, 2
 </details>
 
 ### User Input Validation
-There are multiple validations thoughout the game including:
+There are multiple validations throughout the game including:
 - Name
 - Main Menu Selection
 - Coordinate input
@@ -307,7 +307,7 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Difficulity selector | User can input a grid size and mine count | Grid changes depending on what the user inputs | Working as expected
+| Difficulty selector | User can input a grid size and mine count | Grid changes depending on what the user inputs | Working as expected
 
 2. As a player of the game, I would like to be able to restart the game quickly after finishing the previous one.
 
@@ -331,7 +331,7 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| User guidence | Follow displayed instructions | User are displayed with prompts that guide them with what to input | Working as expected |
+| User guidance | Follow displayed instructions | User are displayed with prompts that guide them with what to input | Working as expected |
 
 6. As a player of the game, I would like to be able to enter my name so it feel more engaging.
 
@@ -364,7 +364,7 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
 | Easily repeatable | ENTER at the end of the game to replay | Input at the end of the game returns the user to the main menu | Working as expected |
 
-11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
+11. As the site owner, I would like to provide the users with a difficulty selector in the form of grid size and amount of mines.
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
@@ -380,7 +380,7 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Incorrect input message | enter any user input and if it is incorrect the user is guided | When user inputs something that is invalid they are displayed a mesage | Working as expected |
+| Incorrect input message | enter any user input and if it is incorrect the user is guided | When user inputs something that is invalid they are displayed a message | Working as expected |
 
 14. As the site owner, I would like to provide a clear and simple game interface for the user to use.
 
@@ -393,13 +393,13 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 | **Bug** | **Fix** |
 | ------- | ------- |
 | The terminal limit was set to 79 therefore I had to reduce my lines to fit within the pep8 guidelines | To fix this I had to reduce this by splitting the lines down while keeping the same functionality |
-| I had countless errors that stated I cant have white spaces after lines | To fix this I simpily removed the white spaces marked in yellow underline by VSCode |
-| Countless errors that would show to many or not enough blank spaces between functions | To fix this I removed or added the appropiate amount of empty line indicated by VSCode's yellow underline
+| I had countless errors that stated I cant have white spaces after lines | To fix this I simply removed the white spaces marked in yellow underline by VSCode |
+| Countless errors that would show to many or not enough blank spaces between functions | To fix this I removed or added the appropriate amount of empty line indicated by VSCode's yellow underline
 
 ## Deployment
 
 ### Render
-I deployed my project to [render](https://dashboard.render.com/) as recommened by my mentor, these are the steps I took inorder deploy it.
+I deployed my project to [render](https://dashboard.render.com/) as recommended by my mentor, these are the steps I took in order deploy it.
 
 1. Create a render account and connect your Github page to it.
 2. Select '+ new' and then select 'Web Service'.
@@ -426,7 +426,7 @@ node index.js
     <img src="assets/readme-images/deployment/deployment-settings.png">
 </details><br>
 
-5. Make sure to add the creds.JSON file as a secret sensitive information isnt exposed.
+5. Make sure to add the creds.JSON file as a secret sensitive information isn't exposed.
 - Make the file name creds.JSON
 - copy and paste the contents of the creds.JSON file into the contents section
 <br>
@@ -446,12 +446,12 @@ I wrote all code except from the following:
 - clear_board() - This was used to clear the terminal, and was imported from [stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python)
 - The code used to connect the google spread sheet was taken from the Love Sandwiches walkthrough project
 <details>
-    <summary>Code snipet for spreadsheet</summary>
+    <summary>Code snippet for spreadsheet</summary>
     <img src="assets/readme-images/lend-code/gs-import.png">
 </details>
 
 - I used this [stackoverflow](https://stackoverflow.com/questions/41910947/how-do-i-make-a-grid-in-python) for inspiration on making my grid.
-- I also looked through this [stackoverflow](https://www.askpython.com/python/examples/create-minesweeper-using-python) through my project for guidence when i was stuck.
+- I also looked through this [stackoverflow](https://www.askpython.com/python/examples/create-minesweeper-using-python) through my project for guidance when I was stuck.
 - I used this [W3School](https://www.w3schools.com/python/ref_func_enumerate.asp) page to learn about the enumerate function in python included to help me index the grid.
 
 ## Acknowledgements
