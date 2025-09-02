@@ -480,25 +480,24 @@ def main_menu():
 3. Tips for Minesweeper
 4. Minesweeper Stats
         """)
-
-        choice = input(
-            Fore.GREEN + Style.BRIGHT
-            + "Select an option using numbers 1-4.\n")
-        if choice == "1":
-            clear_board()
-            game_start()
-        elif choice == "2":
-            clear_board()
-            show_rules()
-        elif choice == "3":
-            clear_board()
-            show_tips()
-        elif choice == "4":
-            clear_board()
-            show_stats()
-        else:
-            print("That is not a valid option")
-            clear_board()
+        while True:
+            choice = input(
+                Fore.GREEN + Style.BRIGHT
+                + "Select an option using numbers 1-4.\n")
+            if choice == "1":
+                clear_board()
+                game_start()
+            elif choice == "2":
+                clear_board()
+                show_rules()
+            elif choice == "3":
+                clear_board()
+                show_tips()
+            elif choice == "4":
+                clear_board()
+                show_stats()
+            else:
+                print(Fore.RED + "That is not a valid option")
 
 
 main_menu()

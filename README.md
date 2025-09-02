@@ -243,10 +243,20 @@ There is also a prompt to allow the user to return back to the main menu once th
 </details>
 
 ### User Input Validation
+There are multiple validations thoughout the game including:
+- Name
+- Main Menu Selection
+- Coordinate input
+- re-revealing the same tile
+- revealing a flagged tile
 
 <details>
-    <summary></summary>
-    <img src="">
+    <summary>Username validation</summary>
+    <img src="assets/readme-images/username_validation.png">
+</details>
+<details>
+    <summary>Coordinate validation</summary>
+    <img src="assets/readme-images/user-validation-coordinate.png">
 </details>
 
 
