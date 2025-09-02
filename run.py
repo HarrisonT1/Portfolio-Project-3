@@ -30,6 +30,9 @@ def clear_board():
 
 
 def show_rules():
+    """
+    Displays the user with the rules of minesweeper
+    """
     clear_board()
     print("""
 How to play Minesweeper
@@ -47,6 +50,9 @@ How to play Minesweeper
 
 
 def show_tips():
+    """
+    Displays the user with tips on minesweeper
+    """
     clear_board()
     print("""
 Tips to help you in minesweeper:
@@ -85,11 +91,14 @@ def show_stats():
 
 
 def update_stats(
-        games_played=0,
-        mines_hit=0,
-        safe_tiles=0,
-        games_won=0,
-        games_lost=0):
+    games_played=0,
+    mines_hit=0,
+    safe_tiles=0,
+    games_won=0,
+    games_lost=0):
+    """
+    This function updates the google spread sheet as the user plays
+    """
     stats = SHEET.worksheet('stats')
     data = stats.get_all_values()
 
@@ -236,6 +245,9 @@ def place_random_mines(grid, num_of_mines):
 
 
 def definitions(selected_tile):
+    """
+    This function defines col and row to be reused in different functions
+    """
     col_let = selected_tile[0].upper()
     row_num = selected_tile[1:]
 
@@ -325,6 +337,9 @@ def increment_score(grid, selected_tile, score):
 
 
 def reveal_adjacent_empty(grid, row, col):
+    """
+    This function reveals all the adjacent tiles that are also empty when an empty tile is selected.
+    """
     grid_size = len(grid)
     for x in range(max(0, row - 1), min(grid_size, row + 2)):
         for y in range(max(0, col - 1), min(grid_size, col + 2)):
@@ -375,6 +390,9 @@ def game_over(grid, selected_tile, calced_time):
 
 
 def game_win(grid):
+    """
+    This function detects when all of the tiles are revealed then displaying the full grid.
+    """
     for row in grid:
         for cell in row:
             if not cell["mine"] and not cell["revealed"]:
@@ -447,6 +465,10 @@ def game_start():
 
 
 def main_menu():
+    """
+    This displays the start screen and the main menu to the user, allowing
+    them to select an option between 4 pages
+    """
     clear_board()
     print(Fore.CYAN + Style.BRIGHT + r"""
  __  __ _

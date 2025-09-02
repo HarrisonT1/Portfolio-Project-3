@@ -218,7 +218,7 @@ The stats pages shows general stats such as 'Games play' and 'Mines hit'. <br>
 It is linked to a google sheets which updates as the user plays. and the users can access this from the main menu option.
 There is also a prompt to allow the user to return back to the main menu once they have finished reading the stats. 
 <details>
-    <summary></summary>
+    <summary>Game stats page</summary>
     <img src="assets/readme-images/user-manual/game-stats.png">
 </details>
 User stories covered: 12
@@ -232,7 +232,7 @@ A user can mark a tile using a '#' before the coordinate '#b3'
     <img src="assets/readme-images/user-manual/game-grid.png">
 </details>
 <details>
-    <summary>Tile flag/summary>
+    <summary>Tile flag</summary>
     <img src="assets/readme-images/tile_flagging.png">
 </details>
 User stories covered: 1, 4, 11, 15
