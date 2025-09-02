@@ -244,10 +244,10 @@ There is also a prompt to allow the user to return back to the main menu once th
 
 ### User Input Validation
 
-<!-- <details>
+<details>
     <summary></summary>
     <img src="">
-</details> -->
+</details>
 
 
 ## Validation

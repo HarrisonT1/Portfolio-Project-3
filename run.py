@@ -458,6 +458,9 @@ def main_menu():
 """ + Style.RESET_ALL)  # noqa: E501
     while True:
         name = input("Please enter your name:\n")
+        if len(name) > 15:
+            print(Fore.RED + "No more than 15 characters, please try again")
+            continue
         if not name:
             print(Fore.RED + "You need to input a username")
             continue
