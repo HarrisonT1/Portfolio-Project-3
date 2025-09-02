@@ -426,16 +426,18 @@ def game_start():
         if grid[row][col]["revealed"]:
             if grid[row][col]["mine"]:
                 game_over(grid, selected_tile, calced_time)
+                print(f"Your score was: {score}")
                 update_stats(mines_hit=1, games_lost=1,)
                 active_game = False
+                continue
 
         # Game win
-        if game_win(grid):
+        if active_game and game_win(grid):
             clear_board()
             show_grid(grid)
             print(Fore.GREEN + "Congratulations! You Win!")
-            print(f"Your score was: {score}")
             print(f"You took {calced_time} before winning")
+            print(f"Your score was: {score}")
             update_stats(games_won=1)
             active_game = False
 

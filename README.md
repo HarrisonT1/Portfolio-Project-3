@@ -212,13 +212,36 @@ There is also a prompt to allow the user to return back to the main menu once th
 ### Game start
 When the game starts the user is displayed with two inputs that asks for a grid size and a mine amount. <br>
 When the inputs are successfully inputted they are shown a grid with labeled x and y axis' with an input that allows them to select a coordinate.
+A user can mark a tile using a '#' before the coordinate '#b3'
 <details>
     <summary>Game grid</summary>
     <img src="assets/readme-images/user-manual/game-grid.png">
 </details>
+<details>
+    <summary>Tile flag/summary>
+    <img src="assets/readme-images/tile_flagging.png">
+</details>
 
 ### Middle of game
+When a user selects a tile it is revealed, if it is a safe tile, all other safe tiles connected to the selected tile are also revealed.
+<details>
+    <summary>Revealed tiles</summary>
+    <img src="assets/readme-images/middle-of-game.png">
+</details>
+
 ### Finished Game
+When a user either reveals all safe tiles or hits a mine when revealing a tile, they are shown the enitre revealed grid.
+There is also a prompt to allow the user to return back to the main menu once they have finished the game.
+<details>
+    <summary>Game win</summary>
+    <img src="assets/readme-images/game_win.png">
+</details>
+
+<details>
+    <summary>Game lose</summary>
+    <img src="assets/readme-images/game_lose.png">
+</details>
+
 ### User Input Validation
 
 <!-- <details>
