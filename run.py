@@ -95,7 +95,8 @@ def update_stats(
     mines_hit=0,
     safe_tiles=0,
     games_won=0,
-    games_lost=0):
+    games_lost=0
+):
     """
     This function updates the google spread sheet as the user plays
     """
@@ -338,7 +339,8 @@ def increment_score(grid, selected_tile, score):
 
 def reveal_adjacent_empty(grid, row, col):
     """
-    This function reveals all the adjacent tiles that are also empty when an empty tile is selected.
+    This function reveals all the adjacent tiles that are also empty when
+    an empty tile is selected.
     """
     grid_size = len(grid)
     for x in range(max(0, row - 1), min(grid_size, row + 2)):
@@ -391,7 +393,8 @@ def game_over(grid, selected_tile, calced_time):
 
 def game_win(grid):
     """
-    This function detects when all of the tiles are revealed then displaying the full grid.
+    This function detects when all of the tiles are revealed then
+    displaying the full grid.
     """
     for row in grid:
         for cell in row:
