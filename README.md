@@ -2,6 +2,16 @@
 
 **Developer: Harrison Townend**
 
+[Visit live website](https://portfolio-project-3-4o3w.onrender.com)
+
+<img src="assets/readme-images/main-title-screen.png">
+
+## About
+
+This project is a command-line terminal game based on the classic Minesweeper.
+
+The aim of Minesweeper is to reveal all of the safe tiles without hitting the mines, this is done with 'hints' in the form of numbers telling you if adjacent tiles are mines 
+
 ## Table of Contents
   - [Project Goals](#project-goals)
     - [User Goals](#user-goals)
