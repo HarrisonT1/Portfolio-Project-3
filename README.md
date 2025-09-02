@@ -187,7 +187,7 @@ This also includes 4 options of:
 - play game
 - Rules
 - Tips
-- Stats
+- Stats <br>
 They are then given a prompt to select one of the 4 options using the numbers 1-4.
 <details>
     <summary>Main menu image</summary>
@@ -249,17 +249,16 @@ User stories covered: 9
 When a user either reveals all safe tiles or hits a mine when revealing a tile, they are shown the entire revealed grid.
 There is also a prompt to allow the user to return back to the main menu once they have finished the game.
 This is also where their score and time is revealed
-User stories covered: 7, 8, 2
 <details>
     <summary>Game win</summary>
     <img src="assets/readme-images/game_win.png">
 </details>
- 
 
 <details>
     <summary>Game lose</summary>
     <img src="assets/readme-images/game_lose.png">
 </details>
+User stories covered: 7, 8, 2
 
 ### User Input Validation
 There are multiple validations throughout the game including:
@@ -268,7 +267,6 @@ There are multiple validations throughout the game including:
 - Coordinate input
 - re-revealing the same tile
 - revealing a flagged tile
-User stories covered: 14
 
 <details>
     <summary>Username validation</summary>
@@ -287,7 +285,7 @@ User stories covered: 14
     <summary>Coordinate validation</summary>
     <img src="assets/readme-images/user-validation-coordinate.png">
 </details>
-
+User stories covered: 14
 
 
 ## Validation
