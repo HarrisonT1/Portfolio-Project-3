@@ -169,6 +169,7 @@ My homescreen has a simple design with a large title 'MINESWEEPER', which is occ
     <summary>Homescreen image</summary>
     <img src="assets/readme-images/user-manual/home-screen.png">
 </details>
+User stories covered: 6
 
 ### Main menu + Users greeting
 when the user enters a name which passes the validation they are taken to the main menu, this shows a welcome message with the users name in it. <br>
@@ -191,6 +192,7 @@ There is also a prompt to allow the user to return back to the main menu once th
     <summary>rules tab</summary>
     <img src="assets/readme-images/user-manual/rules-interface.png">
 </details>
+User stories covered: 3
 
 ### Game tips
 The tips tab gives useful tips to the user to help them succeed when they play the game.
@@ -199,6 +201,7 @@ There is also a prompt to allow the user to return back to the main menu once th
     <summary>Tips tab</summary>
     <img src="assets/readme-images/user-manual/tips-interface.png">
 </details>
+User stories covered: 5
 
 ### Game stats
 The stats pages shows general stats such as 'Games play' and 'Mines hit'. <br>
@@ -208,6 +211,7 @@ There is also a prompt to allow the user to return back to the main menu once th
     <summary></summary>
     <img src="assets/readme-images/user-manual/game-stats.png">
 </details>
+User stories covered: 12
 
 ### Game start
 When the game starts the user is displayed with two inputs that asks for a grid size and a mine amount. <br>
@@ -221,6 +225,7 @@ A user can mark a tile using a '#' before the coordinate '#b3'
     <summary>Tile flag/summary>
     <img src="assets/readme-images/tile_flagging.png">
 </details>
+User stories covered: 1, 4, 11, 15
 
 ### Middle of game
 When a user selects a tile it is revealed, if it is a safe tile, all other safe tiles connected to the selected tile are also revealed.
@@ -228,14 +233,18 @@ When a user selects a tile it is revealed, if it is a safe tile, all other safe 
     <summary>Revealed tiles</summary>
     <img src="assets/readme-images/middle-of-game.png">
 </details>
+User stories covered: 9
 
 ### Finished Game
 When a user either reveals all safe tiles or hits a mine when revealing a tile, they are shown the enitre revealed grid.
 There is also a prompt to allow the user to return back to the main menu once they have finished the game.
+This is also where their score and time is revealed
+User stories covered: 7, 8, 2
 <details>
     <summary>Game win</summary>
     <img src="assets/readme-images/game_win.png">
 </details>
+ 
 
 <details>
     <summary>Game lose</summary>
@@ -249,6 +258,7 @@ There are multiple validations thoughout the game including:
 - Coordinate input
 - re-revealing the same tile
 - revealing a flagged tile
+User stories covered: 14
 
 <details>
     <summary>Username validation</summary>
@@ -272,10 +282,15 @@ There are multiple validations thoughout the game including:
 
 ## Validation
 
+I only have 1 file for python, as the rest was provided by Code Institute.
+I ran this file through their [linter](https://pep8ci.herokuapp.com/)
+
+<details>
+    <summary>run.py validation</summary>
+    <img src="assets/readme-images/ci-python-linter.png>
+</details>
+
 ## Testing
-<!-- | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  | -->
 
 ### Manual Testing
 1. As a player of the game, I would like to select the difficulty of the game before playing in the form of grid size and amount of mines.
@@ -334,11 +349,34 @@ There are multiple validations thoughout the game including:
 
 ### Site Owner
 10. As the site owner, I would like to provide a fun and addicting game to users.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
+
 11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
+
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
+
 14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
+
 15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
 
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  |
 
 ## Bugs
 
