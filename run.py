@@ -126,7 +126,7 @@ def grid_user_input():
             else:
                 print(Fore.RED + "This number is not within the range")
         except ValueError:
-            print(Fore.RED + "Your number is invalid, please use an integer")
+            print(Fore.RED + "Your input is invalid, please use an integer")
     clear_board()
 
     while True:
@@ -144,7 +144,7 @@ def grid_user_input():
             else:
                 print(Fore.RED + "This number is not within the range")
         except ValueError:
-            print(Fore.RED + "Your number is invalid, please use an integer")
+            print(Fore.RED + "Your input is invalid, please use an integer")
 
     print(Style.RESET_ALL)
     clear_board()

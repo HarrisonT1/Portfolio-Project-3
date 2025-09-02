@@ -255,9 +255,19 @@ There are multiple validations thoughout the game including:
     <img src="assets/readme-images/username_validation.png">
 </details>
 <details>
+    <summary>Game selection validation</summary>
+    <img src="assets/readme-images/game_selection_validation.png">
+</details>
+<details>
+    <summary>Grid input validation</summary>
+    <img src="assets/readme-images/grid_size_input.png">
+    <img src="assets/readme-images/grid_mine_amount_input.png">
+</details>
+<details>
     <summary>Coordinate validation</summary>
     <img src="assets/readme-images/user-validation-coordinate.png">
 </details>
+
 
 
 ## Validation
