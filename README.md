@@ -434,6 +434,7 @@ node index.js
     <img src="assets/readme-images/deployment/secret-file-form.png">
 </details>
 <br>
+
 6. Scroll to the bottom and click Deploy Web service.
 
 
