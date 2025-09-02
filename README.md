@@ -279,6 +279,57 @@ There are multiple validations thoughout the game including:
 
 ## Deployment
 ### Render
+I deployed my project to [render](https://dashboard.render.com/) as recommened by my mentor, these are the steps I took inorder deploy it.
+
+1. Create a render account and connect your Github page to it.
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+
+2. Select '+ new' and then select 'Web Service'.
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+
+3. Select the Github repository you want to deploy, This will automatically fill some of the settings such as, branch and language
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+
+4. Customise the settings, changing the build and start commands to as shown below and in the image, and select the free option for instance type.
+
+Build command
+
+```
+pip install -r requirements.txt && npm install
+```
+Start command
+
+```
+node index.js
+```
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+
+5. Make sure to add the creds.JSON file as a secret sensitive information isnt exposed 
+- Make the file name creds.JSON
+- copy and paste the contents of the creds.JSON file into the contents section
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+<details>
+    <summary></summary>
+    <img src="">
+</details>
+
+6. Scroll to the bottom and click Deploy Web service
+
 
 ## Credits
 ### Code

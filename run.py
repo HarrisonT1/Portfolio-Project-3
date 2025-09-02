@@ -471,6 +471,7 @@ def main_menu():
         break
     clear_board()
     while True:
+        clear_board()
         print(
             f"{Fore.MAGENTA}{Style.BRIGHT}Welcome {name_upper} to my "
             "Minesweeper! Please select an option.")
@@ -480,24 +481,25 @@ def main_menu():
 3. Tips for Minesweeper
 4. Minesweeper Stats
         """)
-        while True:
-            choice = input(
-                Fore.GREEN + Style.BRIGHT
-                + "Select an option using numbers 1-4.\n")
-            if choice == "1":
-                clear_board()
-                game_start()
-            elif choice == "2":
-                clear_board()
-                show_rules()
-            elif choice == "3":
-                clear_board()
-                show_tips()
-            elif choice == "4":
-                clear_board()
-                show_stats()
-            else:
-                print(Fore.RED + "That is not a valid option")
+
+        choice = input(
+            Fore.GREEN + Style.BRIGHT
+            + "Select an option using numbers 1-4.\n")
+        if choice == "1":
+            clear_board()
+            game_start()
+        elif choice == "2":
+            clear_board()
+            show_rules()
+        elif choice == "3":
+            clear_board()
+            show_tips()
+        elif choice == "4":
+            clear_board()
+            show_stats()
+        else:
+            print(Fore.RED + "That is not a valid option")
+            clear_board()
 
 
 main_menu()
