@@ -465,8 +465,8 @@ def main_menu():
                 continue
             name_upper = name[0].upper() + name[1:]
         except EOFError:
-            pass
-        break
+            name_upper = "test"
+            break
     clear_board()
     while True:
         print(
