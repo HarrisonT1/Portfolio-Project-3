@@ -125,8 +125,8 @@ After the list the user hits an input which will return them to the main menu.
 10. As the site owner, I would like to provide a fun and addicting game to users.
 11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
-14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
-15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
+13. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
+14. As the site owner, I would like to provide a clear and simple game interface for the user to use.
 
 ## Technical Design
 For python the best method to plan a project is to use a flowchart, this breaks down each function and makes it very clear when you start creating your project
@@ -287,7 +287,7 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 
 <details>
     <summary>run.py validation</summary>
-    <img src="assets/readme-images/ci-python-linter.png>
+    <img src="assets/readme-images/ci-python-linter.png">
 </details>
 
 ## Testing
@@ -345,38 +345,38 @@ I ran this file through their [linter](https://pep8ci.herokuapp.com/)
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
+| Tile flagging | Input eg '#b3' to flag a tile | Square is replaced with an 'F' | Working as expected |
 
 ### Site Owner
 10. As the site owner, I would like to provide a fun and addicting game to users.
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
+| Easily repeatable | ENTER at the end of the game to replay | Input at the end of the game returns the user to the main menu | Working as expected |
 
 11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
+| Grid input | After starting game user picks grid size and mine count | Grid changes according to what the user inputs | Working as expected |
 
 12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
+| Upload data to google spreadsheet | User can play the game as view the global results in the stats page | As the user plays data is uploaded to the spreadsheet | Working as expected |
 
-14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
-
-15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
+13. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
 
 | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
 | ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
+| Incorrect input message | enter any user input and if it is incorrect the user is guided | When user inputs something that is invalid they are displayed a mesage | Working as expected |
+
+14. As the site owner, I would like to provide a clear and simple game interface for the user to use.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Clean interface | Start the game | User will be displayed a clear grid with coordinates for each grid tile | Working as expected |
 
 ## Bugs
 
