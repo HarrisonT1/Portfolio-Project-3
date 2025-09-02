@@ -274,7 +274,6 @@ There are multiple validations thoughout the game including:
 
 ## Testing
 ### Manual Testing
-### Automated Testing
 
 ## Bugs
 
