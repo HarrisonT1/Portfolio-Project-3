@@ -500,8 +500,6 @@ def main_menu():
 def test_fuction():
     print("select an option")
     option = "1) game \n2) rules\n"
-    selected_option = input(option)
-    print(selected_option)
 
 
 if __name__ == "__main__":
