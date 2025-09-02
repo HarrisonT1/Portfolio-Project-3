@@ -496,4 +496,8 @@ def main_menu():
             clear_board()
 
 
-main_menu()
+# main_menu()
+
+print("select an option")
+option = "1) game \n2) rules\n"
+selected_option = input(option)
