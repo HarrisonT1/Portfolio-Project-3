@@ -202,7 +202,23 @@ There is also a prompt to allow the user to return back to the main menu once th
 </details>
 
 ### Game stats
+
+<details>
+The stats pages shows general stats such as 'Games play' and 'Mines hit'. <br>
+It is linked to a google sheets which updates as the user plays. and the users can access this from the main menu option.
+There is also a prompt to allow the user to return back to the main menu once they have finished reading the stats.
+    <summary></summary>
+    <img src="assets/readme-images/user-manual/game-stats.png">
+</details>
+
 ### Game start
+When the game starts the user is displayed with two inputs that asks for a grid size and a mine amount. <br>
+When the inputs are successfully inputted they are shown a grid with labeled x and y axis' with an input that allows them to select a coordinate.
+<details>
+    <summary></summary>
+    <img src="assets/readme-images/user-manual/game-grid.png">
+</details>
+
 ### Middle of game
 ### Finished Game
 ### User Input Validation
