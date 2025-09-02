@@ -193,20 +193,18 @@ There is also a prompt to allow the user to return back to the main menu once th
 </details>
 
 ### Game tips
-
-<details>
 The tips tab gives useful tips to the user to help them succeed when they play the game.
 There is also a prompt to allow the user to return back to the main menu once they have finished reading the tips.
+<details>
     <summary>Tips tab</summary>
     <img src="assets/readme-images/user-manual/tips-interface.png">
 </details>
 
 ### Game stats
-
-<details>
 The stats pages shows general stats such as 'Games play' and 'Mines hit'. <br>
 It is linked to a google sheets which updates as the user plays. and the users can access this from the main menu option.
-There is also a prompt to allow the user to return back to the main menu once they have finished reading the stats.
+There is also a prompt to allow the user to return back to the main menu once they have finished reading the stats. 
+<details>
     <summary></summary>
     <img src="assets/readme-images/user-manual/game-stats.png">
 </details>
@@ -215,7 +213,7 @@ There is also a prompt to allow the user to return back to the main menu once th
 When the game starts the user is displayed with two inputs that asks for a grid size and a mine amount. <br>
 When the inputs are successfully inputted they are shown a grid with labeled x and y axis' with an input that allows them to select a coordinate.
 <details>
-    <summary></summary>
+    <summary>Game grid</summary>
     <img src="assets/readme-images/user-manual/game-grid.png">
 </details>
 
