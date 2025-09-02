@@ -323,6 +323,18 @@ node index.js
 
 ## Credits
 ### Code
+I wrote all code except from the following:
+- clear_board() - This was used to clear the terminal, and was imported from [stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python)
+- The code used to connect the google spread sheet was taken from the Love Sandwiches walkthrough project
+<details>
+    <summary>Code snipet for spreadsheet</summary>
+    <img src="assets/readme-images/lend-code/gs-import.png">
+</details>
+
+- I used this [stackoverflow](https://stackoverflow.com/questions/41910947/how-do-i-make-a-grid-in-python) for inspiration on making my grid.
+- I also looked through this [stackoverflow](https://www.askpython.com/python/examples/create-minesweeper-using-python) through my project for guidence when i was stuck.
+- I used this [W3School](https://www.w3schools.com/python/ref_func_enumerate.asp) page to learn about the enumerate function in python included to help me index the grid.
+
 ## Acknowledgements
 Huge thanks to Code Institute for this opportunity, this project was made for my portfolio project 3 within Code Institute's course.
 Massive thanks to my mentor [Mo Shami](https://www.linkedin.com/in/moshami/) and my friend [Mike Ralph](https://www.linkedin.com/in/mike-ralph-891757112/) as well as the slack community and the Code Institute learning tutors for the help along the way.
