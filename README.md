@@ -282,19 +282,21 @@ There are multiple validations thoughout the game including:
 | The terminal limit was set to 79 therefore I had to reduce my lines to fit within the pep8 guidelines | To fix this I had to reduce this by splitting the lines down while keeping the same functionality |
 | I had countless errors that stated I cant have white spaces after lines | To fix this I simpily removed the white spaces marked in yellow underline by VSCode |
 | Countless errors that would show to many or not enough blank spaces between functions | To fix this I removed or added the appropiate amount of empty line indicated by VSCode's yellow underline
+
 ## Deployment
+
 ### Render
 I deployed my project to [render](https://dashboard.render.com/) as recommened by my mentor, these are the steps I took inorder deploy it.
 
 1. Create a render account and connect your Github page to it.
 2. Select '+ new' and then select 'Web Service'.
-3. Select the Github repository you want to deploy, This will automatically fill some of the settings such as, branch and language.
+3. Select the Github repository you want to deploy, This will automatically fill some of the settings such as, branch and language. <br>
 <details>
     <summary>Select repository</summary>
     <img src="assets/readme-images/deployment/select-repo.png">
-</details>
+</details> <br>
 
-4. Customise the settings, changing the build and start commands to as shown below and in the image, and select the free option for instance type.
+4. Customise the settings, changing the build and start commands to as shown below and in the image, and select the free option for instance type.<br>
 
 Build command
 
@@ -307,22 +309,20 @@ Start command
 node index.js
 ```
 <details>
-    <summary></summary>
+    <summary>Customising settings</summary>
     <img src="assets/readme-images/deployment/deployment-settings.png">
-</details>
+</details><br>
 
 5. Make sure to add the creds.JSON file as a secret sensitive information isnt exposed.
 - Make the file name creds.JSON
 - copy and paste the contents of the creds.JSON file into the contents section
+<br>
 <details>
-    <summary></summary>
+    <summary>Adding a secret file</summary>
     <img src="assets/readme-images/deployment/secret-file.png">
-</details>
-<details>
-    <summary></summary>
     <img src="assets/readme-images/deployment/secret-file-form.png">
 </details>
-
+<br>
 6. Scroll to the bottom and click Deploy Web service.
 
 
@@ -341,5 +341,5 @@ I wrote all code except from the following:
 - I used this [W3School](https://www.w3schools.com/python/ref_func_enumerate.asp) page to learn about the enumerate function in python included to help me index the grid.
 
 ## Acknowledgements
-Huge thanks to Code Institute for this opportunity, this project was made for my portfolio project 3 within Code Institute's course.
+Huge thanks to Code Institute for this opportunity, this project was made for my portfolio project 3 within Code Institute's course. <br>
 Massive thanks to my mentor [Mo Shami](https://www.linkedin.com/in/moshami/) and my friend [Mike Ralph](https://www.linkedin.com/in/mike-ralph-891757112/) as well as the slack community and the Code Institute learning tutors for the help along the way.
