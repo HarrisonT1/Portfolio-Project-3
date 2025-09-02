@@ -273,7 +273,43 @@ There are multiple validations thoughout the game including:
 ## Validation
 
 ## Testing
+<!-- | **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+|  |  |  |  | -->
+
 ### Manual Testing
+1. As a player of the game, I would like to select the difficulty of the game before playing in the form of grid size and amount of mines.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Difficulity selector | User can input a grid size and mine count | Grid changes depending on what the user inputs | Working as expected
+
+2. As a player of the game, I would like to be able to restart the game quickly after finishing the previous one.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Return to main menu | User presses ENTER after game has ended | User is taken back to the main menu where they can select a new difficulty | Working as expected |
+
+3. As a player of the game, I would like to be able to read the rules to understand the game.
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Rules page | User can select rules page from the main menu | Takes the user to the rules page | Working as expected |
+
+4. As a player of the game, I would like to have fun playing the game.
+5. As a player of the game, I would like the game to be simple and easy to understand.
+6. As a player of the game, I would like to be able to enter my name so it feel more engaging.
+7. As a player of the game, I would like to be able to see my score at the end of the game.
+8. As a player of the game, I would like to be able to see my time taken at the end of the game.
+9. As a player of the game, I would like to be able to flag tiles that i think are dangerous.
+
+### Site Owner
+10. As the site owner, I would like to provide a fun and addicting game to users.
+11. As the site owner, I would like to provide the users with a difficilty selector in the form of grid size and amount of mines.
+12. As the site owner, I would like stats of the game to be updated into a Google spreadsheet which users can see.
+14. As the site owner, I would like to create validation with error messages to guide users for any user inputs.
+15. As the site owner, I would like to provide a clear and simple game interface for the user to use.
+
 
 ## Bugs
 
@@ -329,6 +365,7 @@ node index.js
 ## Credits
 ### Code
 I wrote all code except from the following:
+- Template for the readme is taken from the Code Institute student [Aleksandra Haniok](https://github.com/aleksandrajh/CI_PP3_Connect4/tree/main)
 - clear_board() - This was used to clear the terminal, and was imported from [stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python)
 - The code used to connect the google spread sheet was taken from the Love Sandwiches walkthrough project
 <details>
