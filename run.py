@@ -501,3 +501,4 @@ def main_menu():
 print("select an option")
 option = "1) game \n2) rules\n"
 selected_option = input(option)
+print(selected_option)
